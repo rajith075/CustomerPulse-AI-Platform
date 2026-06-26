@@ -1,41 +1,118 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+###############################################################################
+# CustomerPulse AI
+# Enterprise .gitignore
+###############################################################################
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.*
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/versions
+############################
+# Python
+############################
 
-# testing
-/coverage
+__pycache__/
+*.py[cod]
+*$py.class
 
-# next.js
-/.next/
-/out/
+############################
+# Virtual Environments
+############################
 
-# production
-/build
+venv/
+.venv/
+env/
+ENV/
 
-# misc
+backend/venv/
+
+############################
+# Environment Variables
+############################
+
+.env
+.env.*
+!.env.example
+
+############################
+# Jupyter
+############################
+
+.ipynb_checkpoints/
+
+############################
+# Python Tool Caches
+############################
+
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+############################
+# ML Models
+############################
+
+backend/saved_models/*.pkl
+backend/saved_models/*.joblib
+backend/saved_models/*.cbm
+
+############################
+# Logs
+############################
+
+logs/
+*.log
+
+############################
+# VS Code
+############################
+
+.vscode/
+
+############################
+# OS Files
+############################
+
 .DS_Store
-*.pem
+Thumbs.db
 
-# debug
+############################
+# Node.js
+############################
+
+node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-.pnpm-debug.log*
+pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
-.env*
+############################
+# Next.js
+############################
 
-# vercel
-.vercel
+.next/
+out/
 
-# typescript
+############################
+# Build Outputs
+############################
+
+build/
+dist/
+
+############################
+# TypeScript
+############################
+
 *.tsbuildinfo
 next-env.d.ts
+
+############################
+# Vercel
+############################
+
+.vercel/
+
+############################
+# Misc
+############################
+
+*.pem

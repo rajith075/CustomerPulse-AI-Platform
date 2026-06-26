@@ -1,0 +1,24 @@
+{
+    "project": "CustomerPulse AI",
+    "model_name": "CatBoost",
+    "algorithm": "CatBoostClassifier",
+    "version": "1.0.0",
+    "created_on": "2026-06-26 11:21:28",
+    "training_samples": 352665,
+    "testing_samples": 88167,
+    "feature_count": 12,
+    "feature_names": [
+        "Age",
+        "Tenure",
+        "Usage Frequency",
+        "Support Calls",
+        "Payment Delay",
+        "Total Spend",
+        "Last Interaction",
+        "Gender_Male",
+        "Subscription Type_Premium",
+        "Subscription Type_Standard",
+        "Contract Length_Monthly",
+        "Contract Length_Quarterly"
+    ]
+}
