@@ -4,49 +4,80 @@ import json
 class ConsultantPrompt:
 
     @staticmethod
-    def build(customer, prediction, analysis):
+    def build(
+
+        customer,
+
+        prediction,
+
+        business,
+
+        explainability
+
+    ):
 
         return f"""
-You are an expert Customer Success Director,
+You are an expert AI Customer Success Director,
 Business Consultant,
 Retention Strategist,
+Financial Analyst,
 and Executive Advisor.
 
-Your task is to perform a COMPLETE business consultation.
+Your responsibility is to produce a COMPLETE executive-level customer analysis.
 
-You MUST think like an experienced human consultant.
+Think exactly like an experienced Customer Success Director.
 
 Never invent customer information.
 
-Base every conclusion only on the supplied data.
+Every conclusion MUST be supported by either:
 
---------------------------------------------------
+• Customer Profile
+
+• ML Prediction
+
+• Business Intelligence
+
+• Explainability Analysis (SHAP)
+
+Never contradict the supplied data.
+
+Do NOT repeat the same information in multiple sections.
+
+Every section must provide NEW business insight.
+
+====================================================================
 
 CUSTOMER PROFILE
 
 {json.dumps(customer, indent=4)}
 
---------------------------------------------------
+====================================================================
 
 ML PREDICTION
 
 {json.dumps(prediction, indent=4)}
 
---------------------------------------------------
+====================================================================
 
 BUSINESS INTELLIGENCE
 
-{json.dumps(analysis, indent=4)}
+{json.dumps(business, indent=4)}
 
---------------------------------------------------
+====================================================================
+
+MODEL EXPLAINABILITY (SHAP)
+
+{json.dumps(explainability, indent=4)}
+
+====================================================================
 
 Return ONLY valid JSON.
 
-Never use Markdown.
+Do NOT use Markdown.
 
-Never wrap JSON inside ```.
+Do NOT wrap JSON inside ```.
 
-Return EXACTLY this structure.
+Return EXACTLY this JSON structure.
 
 {{
     "customer_overview": {{
@@ -61,56 +92,60 @@ Return EXACTLY this structure.
 
     }},
 
-    "executive_summary":"",
+    "executive_summary": "",
 
-    "customer_health_analysis":"",
+    "customer_health_analysis": "",
 
-    "root_cause_analysis":"",
+    "root_cause_analysis": "",
 
-    "behavior_analysis":"",
+    "behavior_analysis": "",
 
-    "financial_analysis":"",
+    "financial_analysis": "",
 
-    "business_impact":"",
+    "business_impact": "",
 
-    "retention_strategy":"",
+    "retention_strategy": "",
 
-    "expected_outcome":"",
+    "expected_outcome": "",
 
-    "manager_notes":"",
+    "manager_notes": "",
 
-    "customer_email":"",
+    "customer_email": "",
 
-    "call_script":"",
+    "call_script": "",
 
-    "dashboard":{{
+    "dashboard": {{
 
-        "headline":"",
+        "headline": "",
 
-        "severity":"",
+        "severity": "",
 
-        "estimated_loss":"",
+        "estimated_loss": "",
 
-        "next_action":""
+        "next_action": ""
 
     }}
 
 }}
 
+====================================================================
+
 WRITING STYLE
 
-Professional
+• Executive
 
-Executive
+• Professional
 
-Business focused
+• Business Focused
 
-Specific
+• Actionable
 
-Actionable
+• Data Driven
 
-Do not repeat information.
+• Concise
 
-Every section should provide new insight.
+• No Repetition
+
+• Base reasoning on SHAP explainability whenever possible.
 
 """

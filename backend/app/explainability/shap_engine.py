@@ -1,24 +1,41 @@
-import joblib
 import shap
-import pandas as pd
 
 
-class SHAPEngine:
+class ShapEngine:
 
-    def __init__(self):
+    def __init__(self, model):
 
-        self.model = joblib.load(
-            "../../saved_models/customerpulse_catboost.pkl"
+        """
+        Initialize the SHAP explainer using the
+        trained CatBoost model.
+        """
+
+        self.model = model
+
+        self.explainer = shap.TreeExplainer(
+            self.model
         )
 
-        self.feature_names = joblib.load(
-            "../../saved_models/feature_names.pkl"
+    def explain(self, processed_features):
+
+        """
+        Generate SHAP values using the already
+        preprocessed feature set produced by
+        PredictionService.
+        """
+
+        shap_values = self.explainer.shap_values(
+            processed_features
         )
 
-        self.explainer = shap.TreeExplainer(self.model)
+        return {
 
-    def explain(self, customer_df):
+            "feature_names": list(
+                processed_features.columns
+            ),
 
-        shap_values = self.explainer.shap_values(customer_df)
+            "processed_features": processed_features,
 
-        return shap_values
+            "shap_values": shap_values
+
+        }

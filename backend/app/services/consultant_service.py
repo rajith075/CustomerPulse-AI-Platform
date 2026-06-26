@@ -9,7 +9,19 @@ class ConsultantService:
 
         self.gemini = GeminiService()
 
-    def generate(self, customer, prediction, analysis):
+    def generate(
+
+        self,
+
+        customer,
+
+        prediction,
+
+        business,
+
+        explainability
+
+    ):
 
         prompt = ConsultantPrompt.build(
 
@@ -17,7 +29,9 @@ class ConsultantService:
 
             prediction,
 
-            analysis
+            business,
+
+            explainability
 
         )
 

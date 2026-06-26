@@ -5,9 +5,13 @@ class DashboardFormatter:
 
         prediction,
 
-        business
+        business,
+
+        ai_dashboard=None
 
     ):
+
+        ai_dashboard = ai_dashboard or {}
 
         probability = prediction["churn_probability"]
 
@@ -25,25 +29,42 @@ class DashboardFormatter:
 
         return {
 
-            "headline":
-                business["risk_category"],
+            # ===============================
+            # ML + Business Metrics
+            # ===============================
 
-            "severity":
-                business["risk_category"],
+            "headline": ai_dashboard.get(
+                "headline",
+                business["risk_category"]
+            ),
 
-            "probability":
-                probability,
+            "severity": ai_dashboard.get(
+                "severity",
+                business["risk_category"]
+            ),
 
-            "health_score":
-                business["health_score"],
+            "probability": probability,
 
-            "priority":
-                business["customer_priority"],
+            "health_score": business["health_score"],
 
-            "estimated_loss":
-                business["revenue_at_risk"],
+            "priority": business["customer_priority"],
 
-            "color":
-                color
+            "estimated_loss": business["revenue_at_risk"],
+
+            "color": color,
+
+            # ===============================
+            # AI Insights
+            # ===============================
+
+            "next_action": ai_dashboard.get(
+                "next_action",
+                "Immediate retention action recommended."
+            ),
+
+            "executive_note": ai_dashboard.get(
+                "executive_note",
+                ""
+            )
 
         }

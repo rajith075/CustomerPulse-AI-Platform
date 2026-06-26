@@ -21,6 +21,11 @@ class PredictionService:
 
     def preprocess(self, customer: dict):
 
+        """
+        Convert raw customer input into the exact
+        feature vector expected by the CatBoost model.
+        """
+
         df = pd.DataFrame([customer])
 
         df = pd.get_dummies(
@@ -35,13 +40,32 @@ class PredictionService:
 
         return df
 
+    def prepare_features(self, customer: dict):
+
+        """
+        Public method used by:
+
+        • Explainability Engine
+        • Batch Prediction
+        • FastAPI
+        • Future Services
+        """
+
+        return self.preprocess(customer)
+
     def predict(self, customer: dict):
 
-        processed = self.preprocess(customer)
+        processed = self.prepare_features(
+            customer
+        )
 
-        prediction = self.model.predict(processed)[0]
+        prediction = self.model.predict(
+            processed
+        )[0]
 
-        probability = self.model.predict_proba(processed)[0][1]
+        probability = self.model.predict_proba(
+            processed
+        )[0][1]
 
         return {
 
@@ -51,4 +75,5 @@ class PredictionService:
                 float(probability),
                 4
             )
+
         }

@@ -10,84 +10,165 @@ class ReportFormatter:
 
     @staticmethod
     def format(
+
         prediction,
+
         business,
+
         ai_report,
-        metadata=None
+
+        metadata=None,
+
+        explainability=None
+
     ):
 
-        # Default metadata
         metadata = metadata or {}
 
-        report_metadata = {
+        ai_dashboard = ai_report.get(
 
-            "generated_at": datetime.now().isoformat(),
+            "dashboard",
 
-            "ml_model": metadata.get(
-                "ml_model",
-                "CatBoost"
-            ),
+            {}
 
-            "llm": metadata.get(
-                "llm",
-                "Gemini 2.5 Flash"
-            ),
-
-            "model_version": metadata.get(
-                "model_version",
-                "1.0.0"
-            ),
-
-            "report_version": metadata.get(
-                "report_version",
-                "2.0"
-            ),
-
-            "api_version": metadata.get(
-                "api_version",
-                "v1"
-            ),
-
-            "environment": metadata.get(
-                "environment",
-                "Development"
-            ),
-
-            "generated_by": metadata.get(
-                "generated_by",
-                "CustomerPulse AI"
-            ),
-
-            "response_time": metadata.get(
-                "response_time",
-                None
-            )
-
-        }
+        )
 
         return {
 
+            # ==================================================
+            # Prediction
+            # ==================================================
+
             "prediction": prediction,
+
+            # ==================================================
+            # Business Intelligence
+            # ==================================================
 
             "business": business,
 
+            # ==================================================
+            # Explainability
+            # ==================================================
+
+            "explainability": explainability,
+
+            # ==================================================
+            # Unified Dashboard
+            # ==================================================
+
             "dashboard": DashboardFormatter.format(
+
                 prediction,
-                business
+
+                business,
+
+                ai_dashboard
+
             ),
+
+            # ==================================================
+            # Executive Report
+            # ==================================================
 
             "executive": ExecutiveFormatter.format(
+
                 ai_report
+
             ),
+
+            # ==================================================
+            # Customer Email
+            # ==================================================
 
             "email": EmailFormatter.format(
+
                 ai_report
+
             ),
+
+            # ==================================================
+            # Call Script
+            # ==================================================
 
             "call_script": CallScriptFormatter.format(
+
                 ai_report
+
             ),
 
-            "metadata": report_metadata
+            # ==================================================
+            # Metadata
+            # ==================================================
+
+            "metadata": {
+
+                "generated_at": datetime.now().isoformat(),
+
+                "ml_model": metadata.get(
+
+                    "ml_model",
+
+                    "CatBoost"
+
+                ),
+
+                "llm": metadata.get(
+
+                    "llm",
+
+                    "Gemini 2.5 Flash"
+
+                ),
+
+                "model_version": metadata.get(
+
+                    "model_version",
+
+                    "1.0.0"
+
+                ),
+
+                "report_version": metadata.get(
+
+                    "report_version",
+
+                    "2.0"
+
+                ),
+
+                "api_version": metadata.get(
+
+                    "api_version",
+
+                    "v1"
+
+                ),
+
+                "environment": metadata.get(
+
+                    "environment",
+
+                    "Development"
+
+                ),
+
+                "generated_by": metadata.get(
+
+                    "generated_by",
+
+                    "CustomerPulse AI"
+
+                ),
+
+                "response_time": metadata.get(
+
+                    "response_time",
+
+                    None
+
+                )
+
+            }
 
         }

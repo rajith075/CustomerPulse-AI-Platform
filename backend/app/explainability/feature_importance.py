@@ -1,33 +1,69 @@
+import numpy as np
 import pandas as pd
 
 
 class FeatureImportance:
 
-    def get_top_features(
-        self,
+    @staticmethod
+    def rank(
+
+        feature_names,
+
         shap_values,
-        customer_df,
-        top_n=5
+
+        top_k=5
+
     ):
 
-        importance = pd.DataFrame({
+        """
+        Rank the most important features based on
+        absolute SHAP values.
 
-            "Feature": customer_df.columns,
+        Compatible with both:
+        • SHAP ndarray output
+        • SHAP list output (older versions)
+        """
 
-            "SHAP Value": shap_values[0]
+        # ------------------------------------------
+        # Handle different SHAP output formats
+        # ------------------------------------------
+
+        if isinstance(shap_values, list):
+
+            values = np.abs(shap_values[0])
+
+        else:
+
+            values = np.abs(shap_values)
+
+        # SHAP may return shape (1, n_features)
+
+        if len(values.shape) > 1:
+
+            values = values[0]
+
+        # ------------------------------------------
+        # Build Feature Importance DataFrame
+        # ------------------------------------------
+
+        df = pd.DataFrame({
+
+            "feature": feature_names,
+
+            "importance": values
 
         })
 
-        importance["Absolute"] = importance[
-            "SHAP Value"
-        ].abs()
+        df = df.sort_values(
 
-        importance = importance.sort_values(
-
-            by="Absolute",
+            by="importance",
 
             ascending=False
 
         )
 
-        return importance.head(top_n)
+        return df.head(top_k).reset_index(
+
+            drop=True
+
+        )

@@ -1,29 +1,43 @@
+from app.explainability.business_interpreter import BusinessInterpreter
+
+
 class ExplanationBuilder:
 
-    def build(self, top_features):
+    @staticmethod
+    def build(feature_df):
 
-        explanation = []
+        """
+        Build enterprise-grade business explanations
+        from ranked SHAP feature importance.
+        """
 
-        for _, row in top_features.iterrows():
+        explanations = []
 
-            feature = row["Feature"]
+        for rank, (_, row) in enumerate(feature_df.iterrows(), start=1):
 
-            value = row["SHAP Value"]
+            info = BusinessInterpreter.interpret(
+                row["feature"]
+            )
 
-            if value > 0:
+            explanations.append({
 
-                explanation.append(
+                "rank": rank,
 
-                    f"{feature} increases churn risk."
+                "feature": row["feature"],
 
-                )
+                "importance": round(
+                    float(row["importance"]),
+                    4
+                ),
 
-            else:
+                "risk": info["risk"],
 
-                explanation.append(
+                "reason": info["reason"],
 
-                    f"{feature} decreases churn risk."
+                "business_impact": info["business_impact"],
 
-                )
+                "recommended_action": info["recommended_action"]
 
-        return explanation
+            })
+
+        return explanations

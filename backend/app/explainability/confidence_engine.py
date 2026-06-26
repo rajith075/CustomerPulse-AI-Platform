@@ -1,17 +1,52 @@
 class ConfidenceEngine:
 
-    def confidence(self, probability):
+    @staticmethod
+    def calculate(
 
-        if probability >= 95:
+        prediction_probability,
 
-            return "Very High"
+        top_feature_importance
 
-        elif probability >= 85:
+    ):
 
-            return "High"
+        confidence = round(
 
-        elif probability >= 70:
+            prediction_probability * 100,
 
-            return "Medium"
+            2
 
-        return "Low"
+        )
+
+        if confidence >= 95:
+
+            level = "Very High"
+
+        elif confidence >= 85:
+
+            level = "High"
+
+        elif confidence >= 70:
+
+            level = "Medium"
+
+        else:
+
+            level = "Low"
+
+        return {
+
+            "prediction_confidence": confidence,
+
+            "confidence_level": level,
+
+            "top_feature_strength":
+
+                round(
+
+                    float(top_feature_importance),
+
+                    3
+
+                )
+
+        }
