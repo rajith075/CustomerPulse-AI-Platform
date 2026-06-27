@@ -30,6 +30,18 @@ class CustomerAnalysisWorkflow:
         )
 
         # ==========================================================
+        # Create AI-Safe Prediction Object
+        # (Remove internal ML objects)
+        # ==========================================================
+
+        prediction_for_ai = prediction.copy()
+
+        prediction_for_ai.pop(
+            "processed_features",
+            None
+        )
+
+        # ==========================================================
         # STEP 2 : Business Intelligence
         # ==========================================================
 
@@ -52,10 +64,15 @@ class CustomerAnalysisWorkflow:
         # ==========================================================
 
         ai_response = self.consultant_service.generate(
+
             customer,
-            prediction,
+
+            prediction_for_ai,
+
             business,
+
             explainability
+
         )
 
         # ==========================================================
@@ -73,7 +90,16 @@ class CustomerAnalysisWorkflow:
         )
 
         # ==========================================================
-        # STEP 6 : Build Enterprise Report
+        # STEP 6 : Remove Internal Objects
+        # ==========================================================
+
+        prediction.pop(
+            "processed_features",
+            None
+        )
+
+        # ==========================================================
+        # STEP 7 : Build Enterprise Report
         # ==========================================================
 
         final_report = ReportFormatter.format(

@@ -19,6 +19,10 @@ class PredictionService:
 
         print("✅ Production Model Loaded")
 
+    # =====================================================
+    # Feature Engineering
+    # =====================================================
+
     def preprocess(self, customer: dict):
 
         """
@@ -40,18 +44,25 @@ class PredictionService:
 
         return df
 
+    # =====================================================
+    # Public Feature Preparation
+    # =====================================================
+
     def prepare_features(self, customer: dict):
 
         """
-        Public method used by:
+        Used internally by:
 
         • Explainability Engine
         • Batch Prediction
-        • FastAPI
         • Future Services
         """
 
         return self.preprocess(customer)
+
+    # =====================================================
+    # Prediction
+    # =====================================================
 
     def predict(self, customer: dict):
 
@@ -67,13 +78,32 @@ class PredictionService:
             processed
         )[0][1]
 
+        prediction_label = (
+
+            "Likely to Churn"
+
+            if prediction == 1
+
+            else
+
+            "Not Likely to Churn"
+
+        )
+
         return {
 
             "prediction": int(prediction),
 
+            "prediction_label": prediction_label,
+
             "churn_probability": round(
                 float(probability),
                 4
+            ),
+
+            "churn_percentage": round(
+                float(probability) * 100,
+                2
             )
 
         }
