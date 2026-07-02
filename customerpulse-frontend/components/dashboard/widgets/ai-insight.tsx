@@ -297,55 +297,7 @@ export default function AIInsight({
 
         {/* ================= Actions ================= */}
 
-        <div className="mt-6">
-
-          <h3 className="mb-3 flex items-center gap-2 font-semibold text-white">
-
-            <IconTargetArrow
-              size={18}
-              className="text-[#D9FF3F]"
-            />
-
-            Recommended Actions
-
-          </h3>
-
-          <div className="space-y-3">
-
-            {executiveSummary.recommended_actions.map(
-              (item, index) => (
-
-                <div
-                  key={index}
-                  className="
-                  flex
-                  items-start
-                  gap-3
-                  rounded-xl
-                  border
-                  border-[#D9FF3F]/10
-                  bg-[#D9FF3F]/5
-                  p-3
-                  "
-                >
-
-                  <IconCircleCheck
-                    size={18}
-                    className="mt-0.5 text-[#D9FF3F]"
-                  />
-
-                  <p className="text-sm text-zinc-300">
-                    {item}
-                  </p>
-
-                </div>
-
-              )
-            )}
-
-          </div>
-
-        </div>
+       
 
         {/* ================= Footer ================= */}
 

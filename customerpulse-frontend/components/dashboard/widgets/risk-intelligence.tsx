@@ -64,23 +64,23 @@ export default function RiskIntelligence({
 
     <div
       className="
-      rounded-[24px]
+      rounded-[22px]
       border
-      border-white/5
+      border-white/[0.04]
       bg-[linear-gradient(180deg,#090909,#050505)]
-      p-6
+      p-4
       "
     >
 
       {/* Header */}
 
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-3">
 
         <div
           className="
           flex
-          h-12
-          w-12
+          h-10
+          w-10
           items-center
           justify-center
           rounded-xl
@@ -88,59 +88,53 @@ export default function RiskIntelligence({
           "
         >
           <IconShieldExclamation
-            size={24}
+            size={20}
             className="text-red-400"
           />
         </div>
 
         <div>
 
-          <h2 className="text-3xl font-bold text-white">
-
+          <h2 className="text-xl font-semibold text-white">
             Risk Distribution
-
           </h2>
 
-          <p className="text-zinc-500">
-
+          <p className="text-sm text-zinc-500">
             AI Customer Risk Intelligence
-
           </p>
 
         </div>
 
       </div>
 
-      {/* Top Summary */}
+      {/* Summary */}
 
-      <div className="mt-7 grid grid-cols-2 gap-4">
+      <div className="mt-5 grid grid-cols-2 gap-3">
 
         <div
           className="
-          rounded-2xl
+          rounded-xl
           border
           border-white/5
           bg-white/[0.03]
-          p-4
+          p-3
           "
         >
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
 
             <IconUsers
-              size={22}
+              size={18}
               className="text-red-400"
             />
 
-            <span className="text-zinc-400">
-
+            <span className="text-xs text-zinc-400">
               High + Critical
-
             </span>
 
           </div>
 
-          <h3 className="mt-3 text-3xl font-bold text-white">
+          <h3 className="mt-2 text-2xl font-bold text-white">
 
             {highCritical.toLocaleString()}
 
@@ -150,30 +144,28 @@ export default function RiskIntelligence({
 
         <div
           className="
-          rounded-2xl
+          rounded-xl
           border
           border-white/5
           bg-white/[0.03]
-          p-4
+          p-3
           "
         >
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
 
             <IconAlertTriangle
-              size={22}
+              size={18}
               className="text-yellow-400"
             />
 
-            <span className="text-zinc-400">
-
+            <span className="text-xs text-zinc-400">
               Total Risk
-
             </span>
 
           </div>
 
-          <h3 className="mt-3 text-3xl font-bold text-yellow-400">
+          <h3 className="mt-2 text-2xl font-bold text-yellow-400">
 
             {riskPercent.toFixed(1)}%
 
@@ -185,13 +177,13 @@ export default function RiskIntelligence({
 
       {/* Chart */}
 
-      <div className="mt-8 h-[310px]">
+      <div className="mt-5 h-[220px]">
 
         <ResponsiveContainer>
 
           <BarChart
             data={risk}
-            barCategoryGap={35}
+            barCategoryGap={30}
           >
 
             <CartesianGrid
@@ -206,7 +198,7 @@ export default function RiskIntelligence({
               tickLine={false}
               tick={{
                 fill: "#A1A1AA",
-                fontSize: 14,
+                fontSize: 13,
                 fontWeight: 600,
               }}
             />
@@ -219,10 +211,8 @@ export default function RiskIntelligence({
               }}
               contentStyle={{
                 background: "#090909",
-                borderRadius: 18,
                 border: "1px solid rgba(255,255,255,.08)",
-                boxShadow:
-                  "0 20px 50px rgba(0,0,0,.45)",
+                borderRadius: 16,
               }}
               formatter={(value) => [
                 Number(value).toLocaleString(),
@@ -232,9 +222,8 @@ export default function RiskIntelligence({
 
             <Bar
               dataKey="customers"
-              radius={[14,14,0,0]}
-              maxBarSize={58}
-              minPointSize={8}
+              radius={[12,12,0,0]}
+              maxBarSize={48}
               animationDuration={1200}
             >
 
@@ -255,9 +244,9 @@ export default function RiskIntelligence({
 
       </div>
 
-      {/* Bottom Legend */}
+      {/* Legend */}
 
-      <div className="mt-6 grid grid-cols-4 gap-3">
+      <div className="mt-5 grid grid-cols-4 gap-2">
 
         {risk.map((item,index)=>(
 
@@ -268,24 +257,24 @@ export default function RiskIntelligence({
             border
             border-white/5
             bg-white/[0.02]
-            p-3
+            p-2.5
             "
           >
 
             <div
-              className="h-2 w-8 rounded-full"
+              className="h-2 w-7 rounded-full"
               style={{
                 background: colors[index],
               }}
             />
 
-            <p className="mt-3 text-sm text-zinc-400">
+            <p className="mt-2 text-xs text-zinc-400">
 
               {item.level}
 
             </p>
 
-            <h4 className="mt-1 text-lg font-semibold text-white">
+            <h4 className="mt-1 text-base font-semibold text-white">
 
               {item.percentage.toFixed(1)}%
 

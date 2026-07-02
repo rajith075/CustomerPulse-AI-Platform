@@ -3,6 +3,7 @@
 // ======================================================
 
 export interface ExecutiveSummary {
+
   headline: string;
 
   overall_status: string;
@@ -26,6 +27,7 @@ export interface ExecutiveSummary {
   financial_outlook: string;
 
   confidence: string;
+
 }
 
 // ======================================================
@@ -129,6 +131,34 @@ export interface RiskIntelligence {
 }
 
 // ======================================================
+// AI Decision Center
+// ======================================================
+
+export interface DecisionAction {
+
+  title: string;
+
+  description: string;
+
+  priority: string;
+
+  impact: string;
+
+  category: string;
+
+  confidence: string;
+
+  estimated_time: string;
+
+}
+
+export interface DecisionCenter {
+
+  actions: DecisionAction[];
+
+}
+
+// ======================================================
 // Forecast
 // ======================================================
 
@@ -189,6 +219,8 @@ export interface DashboardResponse {
   risk_distribution: RiskDistributionItem[];
 
   executive_summary: ExecutiveSummary;
+
+  decision_center: DecisionCenter;
 
   forecast?: ForecastOverview;
 
