@@ -1,57 +1,175 @@
 // ======================================================
-// Dashboard Types
+// Executive Summary
 // ======================================================
 
 export interface ExecutiveSummary {
-  title: string;
-  summary: string;
+  headline: string;
+
+  overall_status: string;
+
+  priority: string;
+
+  executive_score: number;
+
+  executive_summary: string;
+
+  key_insights: string[];
+
+  business_risks: string[];
+
+  growth_opportunities: string[];
+
+  recommended_actions: string[];
+
+  next_week_focus: string[];
+
+  financial_outlook: string;
+
+  confidence: string;
 }
+
+// ======================================================
+// KPI
+// ======================================================
 
 export interface KPIResponse {
+
   total_customers: number;
-  active_customers: number;
-  churn_customers: number;
-  high_risk_customers: number;
+
   revenue_at_risk: number;
+
   average_health_score: number;
-  average_confidence: number;
-  average_churn_probability: number;
+
+  high_risk_customers: number;
+
 }
+
+// ======================================================
+// Revenue Chart
+// ======================================================
 
 export interface RevenueChartPoint {
-  label: string;
+
+  month: string;
+
   revenue: number;
+
 }
+
+// ======================================================
+// Customer Health
+// ======================================================
 
 export interface HealthOverview {
-  average_health: number;
-  healthy_customers: number;
-  unhealthy_customers: number;
+
+  overall_score: number;
+
+  healthy: number;
+
+  moderate: number;
+
+  at_risk: number;
+
+  critical: number;
+
+  healthy_percentage: number;
+
+  moderate_percentage: number;
+
+  at_risk_percentage: number;
+
+  critical_percentage: number;
+
 }
+
+// ======================================================
+// Customer Segmentation
+// ======================================================
+
+export interface SegmentItem {
+
+  name: string;
+
+  count: number;
+
+  percentage: number;
+
+  color: string;
+
+}
+
+export interface CustomerSegmentation {
+
+  total: number;
+
+  segments: SegmentItem[];
+
+}
+
+// ======================================================
+// Risk Intelligence
+// ======================================================
 
 export interface RiskDistributionItem {
+
   level: string;
+
   customers: number;
+
   percentage: number;
+
 }
+
+export interface RiskIntelligence {
+
+  total_high_risk: number;
+
+  distribution: RiskDistributionItem[];
+
+}
+
+// ======================================================
+// Forecast
+// ======================================================
 
 export interface ForecastOverview {
+
   expected_revenue: number;
+
   projected_growth: number;
+
   confidence: number;
+
 }
+
+// ======================================================
+// Recent Predictions
+// ======================================================
 
 export interface PredictionItem {
+
   customer_id: number;
+
   churn_probability: number;
+
   risk_level: string;
+
   recommendation: string;
+
 }
 
+// ======================================================
+// AI Recommendations
+// ======================================================
+
 export interface RecommendationItem {
+
   title: string;
+
   description: string;
+
   priority: string;
+
 }
 
 // ======================================================
@@ -60,21 +178,23 @@ export interface RecommendationItem {
 
 export interface DashboardResponse {
 
-  executive_summary: ExecutiveSummary;
-
   kpis: KPIResponse;
 
   revenue_chart: RevenueChartPoint[];
 
   health: HealthOverview;
 
+  customer_segmentation: CustomerSegmentation;
+
   risk_distribution: RiskDistributionItem[];
 
-  forecast: ForecastOverview;
+  executive_summary: ExecutiveSummary;
 
-  recent_predictions: PredictionItem[];
+  forecast?: ForecastOverview;
 
-  recommendations: RecommendationItem[];
+  recent_predictions?: PredictionItem[];
+
+  recommendations?: RecommendationItem[];
 
 }
 

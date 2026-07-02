@@ -29,6 +29,7 @@ export default function RevenueChart({
       : 0;
 
   return (
+
     <div
       className="
       relative
@@ -40,7 +41,10 @@ export default function RevenueChart({
       p-5
       "
     >
-      <div className="absolute -right-20 top-0 h-64 w-64 rounded-full bg-[#D9FF3F]/5 blur-[120px]" />
+
+      {/* Background Glow */}
+
+      <div className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-[#D9FF3F]/5 blur-[140px]" />
 
       {/* Header */}
 
@@ -59,6 +63,7 @@ export default function RevenueChart({
             bg-[#D9FF3F]/10
             "
           >
+
             <svg
               width="20"
               height="20"
@@ -70,6 +75,7 @@ export default function RevenueChart({
               <polyline points="3 17 9 11 13 15 21 7" />
               <polyline points="14 7 21 7 21 14" />
             </svg>
+
           </div>
 
           <div>
@@ -96,7 +102,7 @@ export default function RevenueChart({
           py-2
           text-sm
           text-zinc-300
-          transition
+          transition-all
           hover:border-[#D9FF3F]/30
           hover:text-[#D9FF3F]
           "
@@ -115,9 +121,9 @@ export default function RevenueChart({
           <AreaChart
             data={data}
             margin={{
-              top: 20,
-              right: 15,
-              left: 15,
+              top: 15,
+              right: 10,
+              left: 10,
               bottom: 0,
             }}
           >
@@ -131,10 +137,17 @@ export default function RevenueChart({
                 x2="0"
                 y2="1"
               >
+
                 <stop
                   offset="0%"
                   stopColor="#D9FF3F"
-                  stopOpacity={0.45}
+                  stopOpacity={0.40}
+                />
+
+                <stop
+                  offset="70%"
+                  stopColor="#D9FF3F"
+                  stopOpacity={0.08}
                 />
 
                 <stop
@@ -145,12 +158,35 @@ export default function RevenueChart({
 
               </linearGradient>
 
+              <filter
+                id="lineGlow"
+                x="-50%"
+                y="-50%"
+                width="200%"
+                height="200%"
+              >
+
+                <feGaussianBlur
+                  stdDeviation="5"
+                  result="blur"
+                />
+
+                <feMerge>
+
+                  <feMergeNode in="blur" />
+
+                  <feMergeNode in="SourceGraphic" />
+
+                </feMerge>
+
+              </filter>
+
             </defs>
 
             <CartesianGrid
               vertical={false}
-              stroke="rgba(255,255,255,.05)"
-              strokeDasharray="3 5"
+              stroke="rgba(255,255,255,.04)"
+              strokeDasharray="2 8"
             />
 
             <XAxis
@@ -158,35 +194,29 @@ export default function RevenueChart({
               axisLine={false}
               tickLine={false}
               tick={{
-                fill: "#8b8b8b",
+                fill: "#8A8A8A",
                 fontSize: 13,
               }}
             />
 
             <YAxis
-              axisLine={false}
-              tickLine={false}
-              width={70}
-              domain={[0, maxRevenue * 1.1]}
-              tickFormatter={(value) =>
-                `$${(value / 1000000).toFixed(0)}M`
-              }
-              tick={{
-                fill: "#8b8b8b",
-                fontSize: 12,
-              }}
+              hide
+              domain={[0, maxRevenue * 1.15]}
             />
 
             <Tooltip
               cursor={{
                 stroke: "#D9FF3F",
                 strokeWidth: 1,
+                strokeDasharray: "4 4",
               }}
               contentStyle={{
                 background: "#0B1020",
-                borderRadius: 16,
                 border: "1px solid rgba(217,255,63,.25)",
+                borderRadius: 16,
                 color: "#fff",
+                boxShadow:
+                  "0 20px 45px rgba(0,0,0,.45)",
               }}
               formatter={(value) => [
                 `$${Number(value).toLocaleString()}`,
@@ -195,17 +225,87 @@ export default function RevenueChart({
             />
 
             <Area
-              type="monotone"
+              type="natural"
               dataKey="revenue"
               stroke="#D9FF3F"
               strokeWidth={4}
               fill="url(#revenueFill)"
-              activeDot={{
-                r: 7,
-                fill: "#D9FF3F",
-                stroke: "#fff",
-                strokeWidth: 2,
+              filter="url(#lineGlow)"
+              isAnimationActive
+              animationDuration={1200}
+
+              dot={(props) => {
+
+                const { cx, cy } = props;
+
+                return (
+
+                  <g>
+
+                    <circle
+                      cx={cx}
+                      cy={cy}
+                      r={10}
+                      fill="#D9FF3F"
+                      opacity={0.18}
+                    />
+
+                    <circle
+                      cx={cx}
+                      cy={cy}
+                      r={7}
+                      fill="#ffffff"
+                    />
+
+                    <circle
+                      cx={cx}
+                      cy={cy}
+                      r={4}
+                      fill="#D9FF3F"
+                    />
+
+                  </g>
+
+                );
+
               }}
+
+              activeDot={(props) => {
+
+                const { cx, cy } = props;
+
+                return (
+
+                  <g>
+
+                    <circle
+                      cx={cx}
+                      cy={cy}
+                      r={13}
+                      fill="#D9FF3F"
+                      opacity={0.25}
+                    />
+
+                    <circle
+                      cx={cx}
+                      cy={cy}
+                      r={9}
+                      fill="#ffffff"
+                    />
+
+                    <circle
+                      cx={cx}
+                      cy={cy}
+                      r={5}
+                      fill="#D9FF3F"
+                    />
+
+                  </g>
+
+                );
+
+              }}
+
             />
 
           </AreaChart>
@@ -215,5 +315,7 @@ export default function RevenueChart({
       </div>
 
     </div>
+
   );
+
 }

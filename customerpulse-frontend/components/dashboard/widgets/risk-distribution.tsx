@@ -11,35 +11,29 @@ import {
   IconChartDonut,
 } from "@tabler/icons-react";
 
-const data = [
-  {
-    name: "High Value",
-    value: 28,
-    color: "#C6FF00",
-  },
-  {
-    name: "At Risk",
-    value: 24,
-    color: "#19B5FE",
-  },
-  {
-    name: "Loyal",
-    value: 21,
-    color: "#60A5FA",
-  },
-  {
-    name: "New",
-    value: 17,
-    color: "#8B5CF6",
-  },
-  {
-    name: "Inactive",
-    value: 10,
-    color: "#FB923C",
-  },
-];
+interface Segment {
+  name: string;
+  count: number;
+  percentage: number;
+  color: string;
+}
 
-export default function RiskDistribution() {
+interface RiskDistributionProps {
+  segmentation: {
+    total: number;
+    segments: Segment[];
+  };
+}
+
+export default function RiskDistribution({
+  segmentation,
+}: RiskDistributionProps) {
+
+  const data = segmentation.segments.map((item) => ({
+    ...item,
+    value: item.percentage,
+  }));
+
   return (
     <div
       className="
@@ -54,7 +48,7 @@ export default function RiskDistribution() {
     >
       {/* Glow */}
 
-      <div className="absolute -left-20 -top-20 h-56 w-56 rounded-full bg-red-500/5 blur-[120px]" />
+      <div className="absolute -left-20 -top-20 h-56 w-56 rounded-full bg-violet-500/5 blur-[120px]" />
 
       <div className="relative">
 
@@ -85,15 +79,17 @@ export default function RiskDistribution() {
               Customer Segmentation
             </h2>
 
+            <p className="text-sm text-zinc-500">
+              AI Customer Classification
+            </p>
+
           </div>
 
         </div>
 
-        {/* Donut + Legend */}
+        {/* Donut */}
 
         <div className="mt-8 flex items-center justify-between gap-6">
-
-          {/* Donut */}
 
           <div className="relative h-52 w-52 flex-shrink-0">
 
@@ -103,18 +99,22 @@ export default function RiskDistribution() {
 
                 <Pie
                   data={data}
+                  dataKey="value"
                   innerRadius={56}
                   outerRadius={82}
                   paddingAngle={2}
-                  dataKey="value"
                   stroke="transparent"
                 >
-                  {data.map((entry) => (
+
+                  {data.map((item) => (
+
                     <Cell
-                      key={entry.name}
-                      fill={entry.color}
+                      key={item.name}
+                      fill={item.color}
                     />
+
                   ))}
+
                 </Pie>
 
               </PieChart>
@@ -133,12 +133,17 @@ export default function RiskDistribution() {
               justify-center
               "
             >
+
               <div className="text-4xl font-bold text-white">
-                2,148
+
+                {segmentation.total.toLocaleString()}
+
               </div>
 
               <div className="mt-1 text-sm text-zinc-400">
-                Total
+
+                Customers
+
               </div>
 
             </div>
@@ -165,14 +170,28 @@ export default function RiskDistribution() {
                     }}
                   />
 
-                  <span className="text-sm text-zinc-300">
-                    {item.name}
-                  </span>
+                  <div>
+
+                    <div className="text-sm text-zinc-200">
+
+                      {item.name}
+
+                    </div>
+
+                    <div className="text-xs text-zinc-500">
+
+                      {item.count.toLocaleString()} customers
+
+                    </div>
+
+                  </div>
 
                 </div>
 
-                <span className="font-medium text-white">
-                  {item.value}%
+                <span className="font-semibold text-white">
+
+                  {item.percentage}%
+
                 </span>
 
               </div>

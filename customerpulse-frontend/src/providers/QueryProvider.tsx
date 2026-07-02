@@ -22,7 +22,7 @@ export default function QueryProvider({
             staleTime: 1000 * 60 * 5,
             gcTime: 1000 * 60 * 10,
             retry: 2,
-            refetchOnWindowFocus: true,
+            refetchOnWindowFocus: false,
             refetchOnReconnect: true,
             refetchOnMount: false,
           },
