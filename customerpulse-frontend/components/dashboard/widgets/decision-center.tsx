@@ -26,39 +26,98 @@ export default function DecisionCenter({
     >
       {/* Header */}
 
-      <div className="flex items-center gap-4">
+<div className="flex items-start justify-between">
 
-        <div
-          className="
-          flex
-          h-12
-          w-12
-          items-center
-          justify-center
-          rounded-xl
-          bg-violet-500/10
-          "
-        >
-          <IconBrain
-            size={24}
-            className="text-violet-400"
-          />
-        </div>
+  <div className="flex gap-5">
 
-        <div>
+    <div
+      className="
+      flex
+      h-14
+      w-14
+      items-center
+      justify-center
+      rounded-2xl
+      border
+      border-violet-500/20
+      bg-violet-500/10
+      "
+    >
 
-          <h2 className="text-2xl font-bold text-white">
-            AI Decision Center
-          </h2>
+      <IconBrain
+        size={28}
+        className="text-violet-400"
+      />
 
-          <p className="text-zinc-500">
-            Gemini Strategic Recommendations
-          </p>
+    </div>
 
-        </div>
+    <div>
 
-      </div>
+      <p
+        className="
+        text-xs
+        uppercase
+        tracking-[0.35em]
+        text-zinc-500
+        "
+      >
+        Decision Center
+      </p>
 
+      <h2
+        className="
+        mt-2
+        text-3xl
+        font-bold
+        text-white
+        "
+      >
+        AI Strategic Recommendations
+      </h2>
+
+      <p
+        className="
+        mt-2
+        text-zinc-500
+        "
+      >
+        Business decisions prioritized by Gemini Intelligence
+      </p>
+
+    </div>
+
+  </div>
+
+  <div
+    className="
+    rounded-full
+    border
+    border-violet-500/20
+    bg-violet-500/10
+    px-5
+    py-2
+    "
+  >
+
+    <span
+      className="
+      text-xs
+      font-semibold
+      uppercase
+      tracking-[0.25em]
+      text-violet-300
+      "
+    >
+
+      AI Powered
+
+    </span>
+
+  </div>
+
+</div>
+
+<div className="mt-8 h-px bg-white/5" />
       {/* Empty State */}
 
       {(!data.actions || data.actions.length === 0) && (
@@ -102,9 +161,6 @@ export default function DecisionCenter({
               p-5
               transition-all
               duration-300
-              hover:-translate-y-1
-              hover:border-[#D9FF3F]/30
-              hover:bg-white/[0.05]
               "
             >
 
