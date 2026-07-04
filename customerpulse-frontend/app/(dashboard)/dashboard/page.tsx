@@ -138,16 +138,23 @@ export default function DashboardPage() {
 
       </section>
 
-      {/* ================= Forecast + Recommendations ================= */}
+     {/* ================= Forecast ================= */}
 
-      <section className="mt-5 grid gap-4 xl:grid-cols-2">
+<section className="mt-5">
 
-        <ForecastCard />
-<DecisionCenter
-  data={dashboard.decision_center}
-/>
+  <ForecastCard />
 
-      </section>
+</section>
+
+{/* ================= Strategic AI Decision Center ================= */}
+
+<section className="mt-5">
+
+  <DecisionCenter
+    data={dashboard.decision_center}
+  />
+
+</section>
 
       {/* ================= Recent Activities ================= */}
 
