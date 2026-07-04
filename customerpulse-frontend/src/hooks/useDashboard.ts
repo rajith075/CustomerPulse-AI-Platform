@@ -1,31 +1,28 @@
 "use client";
 
+import { useSearchParams } from "next/navigation";
 import { useQuery } from "@tanstack/react-query";
 
 import { getDashboard } from "@/api/dashboard";
 
-import {
-  DashboardAPIResponse,
-  DashboardResponse,
-} from "@/types/dashboard";
+import { DashboardResponse } from "@/types/dashboard";
 
 export function useDashboard() {
+  const searchParams = useSearchParams();
+
+  const projectId = searchParams.get("project") ?? "";
 
   const {
-
     data,
-
     isLoading,
-
     error,
-
     refetch,
+  } = useQuery<DashboardResponse>({
+    queryKey: ["dashboard", projectId],
 
-  } = useQuery<DashboardAPIResponse>({
+    queryFn: () => getDashboard(projectId),
 
-    queryKey: ["dashboard"],
-
-    queryFn: getDashboard,
+    enabled: projectId.length > 0,
 
     staleTime: 1000 * 60 * 5,
 
@@ -35,15 +32,11 @@ export function useDashboard() {
 
     refetchOnReconnect: true,
 
-    refetchOnMount: false,
-
     retry: 2,
-
   });
 
   return {
-
-    dashboard: data?.data as DashboardResponse | null,
+    dashboard: data ?? null,
 
     loading: isLoading,
 
@@ -51,6 +44,6 @@ export function useDashboard() {
 
     refresh: refetch,
 
+    projectId,
   };
-
 }

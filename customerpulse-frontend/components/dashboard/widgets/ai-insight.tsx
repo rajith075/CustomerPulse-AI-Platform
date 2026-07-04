@@ -13,10 +13,15 @@ interface ExecutiveSummary {
   headline: string;
 
   overall_status: string;
+  overall_status_description: string;
 
   priority: string;
+  priority_description: string;
 
   executive_score: number;
+
+  confidence_title: string;
+  confidence_explanation: string;
 
   executive_summary: string;
 
@@ -31,10 +36,7 @@ interface ExecutiveSummary {
   next_week_focus: string[];
 
   financial_outlook: string;
-
-  confidence: string;
 }
-
 interface AIInsightProps {
   executiveSummary: ExecutiveSummary;
 }
@@ -42,6 +44,7 @@ interface AIInsightProps {
 export default function AIInsight({
   executiveSummary,
 }: AIInsightProps) {
+  console.log("Executive Summary:", executiveSummary);
   return (
     <div
       className="
@@ -184,12 +187,9 @@ export default function AIInsight({
 
         </p>
 
-        <h3 className="mt-2 text-2xl font-semibold text-white">
-
-          Business Stable
-
-        </h3>
-
+       <h3 className="mt-2 text-2xl font-semibold text-white">
+    {executiveSummary.overall_status}
+</h3>
       </div>
 
     </div>
@@ -198,8 +198,7 @@ export default function AIInsight({
 
     <p className="leading-8 text-zinc-400">
 
-      Stable with critical areas requiring immediate intervention to mitigate substantial revenue risk.
-
+      {executiveSummary.overall_status_description}
     </p>
 
   </div>
@@ -252,7 +251,7 @@ export default function AIInsight({
 
         <h3 className="mt-2 text-2xl font-semibold text-white">
 
-          High Priority
+         {executiveSummary.priority}
 
         </h3>
 
@@ -264,7 +263,7 @@ export default function AIInsight({
 
     <p className="leading-8 text-zinc-400">
 
-      {executiveSummary.priority}
+    {executiveSummary.priority_description}
 
     </p>
 
@@ -318,7 +317,7 @@ export default function AIInsight({
 
         <h3 className="mt-2 text-2xl font-semibold text-white">
 
-          {executiveSummary.confidence}
+          {executiveSummary.confidence_title}
 
         </h3>
 
@@ -328,12 +327,17 @@ export default function AIInsight({
 
     <div className="my-6 h-px bg-white/6" />
 
-    <p className="leading-8 text-zinc-400">
+  <div className="my-6 h-px bg-white/6" />
 
-      Confidence is generated using prediction certainty,
-      customer behavior and business intelligence models.
+<div className="max-h-[120px] overflow-y-auto pr-2">
 
-    </p>
+  <p className="leading-8 text-zinc-400">
+
+    {executiveSummary.confidence_explanation}
+
+  </p>
+
+</div>
 
   </div>
 
@@ -357,9 +361,15 @@ export default function AIInsight({
     Executive Summary
   </p>
 
-  <p className="mt-5 text-lg leading-9 text-zinc-300">
-    {executiveSummary.executive_summary}
-  </p>
+ <div className="mt-5 max-h-[220px] overflow-y-auto pr-2">
+
+    <p className="text-lg leading-9 text-zinc-300">
+
+        {executiveSummary.executive_summary}
+
+    </p>
+
+</div>
 
 </div>
         {/* ================= Two Columns ================= */}

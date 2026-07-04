@@ -19,12 +19,33 @@ import {
 } from "@tabler/icons-react";
 
 export default function DashboardPage() {
-  const {
-    dashboard,
-    loading,
-    error,
-    refresh,
-  } = useDashboard();
+ const {
+  dashboard,
+  loading,
+  error,
+  refresh,
+  projectId,
+} = useDashboard();
+  if (!projectId) {
+  return (
+    <div className="flex h-[80vh] flex-col items-center justify-center">
+      <h2 className="text-3xl font-bold text-white">
+        No Dataset Selected
+      </h2>
+
+      <p className="mt-4 max-w-lg text-center text-zinc-400">
+        Upload a customer dataset first to generate your AI dashboard.
+      </p>
+
+      <button
+        onClick={() => window.location.href = "/upload"}
+        className="mt-8 rounded-xl bg-[#D9FF3F] px-8 py-4 font-semibold text-black transition hover:scale-105"
+      >
+        Upload Dataset
+      </button>
+    </div>
+  );
+}
 
   if (loading && !dashboard) {
     return (
@@ -53,7 +74,15 @@ export default function DashboardPage() {
     );
   }
 
-  if (!dashboard) return null;
+ if (!dashboard) {
+  return (
+    <div className="flex h-[80vh] items-center justify-center">
+      <p className="text-lg text-zinc-400">
+        Dashboard data is not available.
+      </p>
+    </div>
+  );
+}
 
   return (
     <div className="mx-auto w-full max-w-[1500px] px-5 py-4 xl:px-6">
@@ -140,11 +169,6 @@ export default function DashboardPage() {
 
      {/* ================= Forecast ================= */}
 
-<section className="mt-5">
-
-  <ForecastCard />
-
-</section>
 
 {/* ================= Strategic AI Decision Center ================= */}
 

@@ -1,5 +1,5 @@
 import {
-  IconLayoutDashboard,
+  IconUpload,
   IconUsers,
   IconChartBar,
   IconCoins,
@@ -17,9 +17,9 @@ export interface NavigationItem {
 
 export const navigation: NavigationItem[] = [
   {
-    title: "Dashboard",
-    href: "/dashboard",
-    icon: IconLayoutDashboard,
+    title: "Upload Dataset",
+    href: "/upload",
+    icon: IconUpload,
   },
   {
     title: "Customers",

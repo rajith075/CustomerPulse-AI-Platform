@@ -1,9 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import ExecutiveCalendar from "@/components/calendar/executive-calendar";
-
 import NotificationPanel from "@/components/notifications/notification-panel";
 
 import { useNotifications } from "../../hooks/useNotifications";
@@ -18,31 +17,39 @@ import {
 } from "@tabler/icons-react";
 
 export default function Topbar() {
-
   const [calendarOpen, setCalendarOpen] = useState(false);
 
-  const hour = new Date().getHours();
   const [notificationOpen, setNotificationOpen] = useState(false);
 
   const { unreadCount } = useNotifications();
 
-  const greeting =
-    hour < 12
-      ? "Good Morning"
-      : hour < 17
-      ? "Good Afternoon"
-      : "Good Evening";
+  // ============================================
+  // Fix Hydration Error
+  // ============================================
+
+  const [greeting, setGreeting] = useState("Hello");
+
+  useEffect(() => {
+    const hour = new Date().getHours();
+
+    if (hour < 12) {
+      setGreeting("Good Morning");
+    } else if (hour < 17) {
+      setGreeting("Good Afternoon");
+    } else {
+      setGreeting("Good Evening");
+    }
+  }, []);
+
+  // ============================================
 
   const openSpotlight = () => {
-
     window.dispatchEvent(
       new Event("open-spotlight")
     );
-
   };
 
   return (
-
     <>
 
       <header

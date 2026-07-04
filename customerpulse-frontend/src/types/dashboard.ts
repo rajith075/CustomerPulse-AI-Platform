@@ -3,31 +3,28 @@
 // ======================================================
 
 export interface ExecutiveSummary {
-
   headline: string;
 
   overall_status: string;
+  overall_status_description: string;
 
   priority: string;
+  priority_description: string;
 
   executive_score: number;
+
+  confidence_title: string;
+  confidence_explanation: string;
 
   executive_summary: string;
 
   key_insights: string[];
-
   business_risks: string[];
-
   growth_opportunities: string[];
-
   recommended_actions: string[];
-
   next_week_focus: string[];
 
   financial_outlook: string;
-
-  confidence: string;
-
 }
 
 // ======================================================

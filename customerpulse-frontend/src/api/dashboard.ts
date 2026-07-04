@@ -24,8 +24,15 @@ export interface APIResponse<T> {
   };
 }
 
-export async function getDashboard() {
-  const response = await dashboardAPI.get("/dashboard/");
+export async function getDashboard(projectId: string) {
+
+  if (!projectId) {
+    throw new Error("Project ID not found.");
+  }
+
+  const response = await dashboardAPI.get(
+    `/dashboard/${projectId}`
+  );
 
   return response.data;
 }
