@@ -1,7 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import {
+  usePathname,
+  useSearchParams,
+} from "next/navigation";
 
 import {
   IconSparkles,
@@ -12,6 +15,11 @@ import { navigation } from "@/constants/navigation";
 
 export default function Sidebar() {
   const pathname = usePathname();
+
+  const searchParams = useSearchParams();
+
+  const projectId =
+    searchParams.get("project");
 
   return (
     <aside
@@ -78,12 +86,18 @@ export default function Sidebar() {
         <nav className="space-y-0.5">
           {navigation.map((item) => {
             const Icon = item.icon;
-            const active = pathname === item.href;
+
+            const href = projectId
+              ? `${item.href}?project=${projectId}`
+              : item.href;
+
+            const active =
+              pathname === item.href;
 
             return (
               <Link
                 key={item.href}
-                href={item.href}
+                href={href}
                 className={`
                 group
                 relative

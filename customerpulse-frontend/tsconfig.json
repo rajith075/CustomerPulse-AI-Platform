@@ -25,15 +25,14 @@
   "@/app/*": ["./app/*"],
   "@/components/*": ["./components/*"],
   "@/constants/*": ["./constants/*"],
-
-  "@/hooks/*": ["./hooks/*"],
-  "@/types/*": ["./types/*"],
-  "@/services/*": ["./services/*"],
-  "@/store/*": ["./store/*"],
-  "@/utils/*": ["./utils/*"],
-  "@/config/*": ["./config/*"],
-  "@/providers/*": ["./providers/*"],
-
+"@/api/*": ["./api/*"],
+"@/hooks/*": ["./hooks/*"],
+"@/types/*": ["./types/*"],
+"@/services/*": ["./services/*"],
+"@/store/*": ["./store/*"],
+"@/utils/*": ["./utils/*"],
+"@/config/*": ["./config/*"],
+"@/providers/*": ["./providers/*"],
   "@/api/*": ["./api/*"]
 },
 
