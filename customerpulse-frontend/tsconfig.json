@@ -19,23 +19,23 @@
     "incremental": true,
 
     "baseUrl": ".",
+"paths": {
+  "@/*": ["./*"],
 
-    "paths": {
-      "@/app/*": ["./app/*"],
-      "@/components/*": ["./components/*"],
-      "@/constants/*": ["./constants/*"],
+  "@/app/*": ["./app/*"],
+  "@/components/*": ["./components/*"],
+  "@/constants/*": ["./constants/*"],
 
-      "@/api/*": ["./src/api/*"],
-      "@/hooks/*": ["./src/hooks/*"],
-      "@/types/*": ["./src/types/*"],
-      "@/services/*": ["./src/services/*"],
-      "@/store/*": ["./src/store/*"],
-      "@/utils/*": ["./src/utils/*"],
-      "@/config/*": ["./src/config/*"],
-      "@/providers/*": ["./src/providers/*"],
+  "@/hooks/*": ["./hooks/*"],
+  "@/types/*": ["./types/*"],
+  "@/services/*": ["./services/*"],
+  "@/store/*": ["./store/*"],
+  "@/utils/*": ["./utils/*"],
+  "@/config/*": ["./config/*"],
+  "@/providers/*": ["./providers/*"],
 
-      "@/*": ["./*"]
-    },
+  "@/api/*": ["./api/*"]
+},
 
     "plugins": [
       {
