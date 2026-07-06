@@ -24,7 +24,6 @@ Return exactly this JSON schema.
 "confidence_level":"",
 "customer_strengths":[],
 "customer_weaknesses":[],
-"recommended_actions":[],
 "retention_strategy":"",
 "expected_outcome":"",
 "email":"",

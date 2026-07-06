@@ -35,12 +35,12 @@ class DashboardFormatter:
 
             "headline": ai_dashboard.get(
                 "headline",
-                business["risk_category"]
+                business["risk_level"]
             ),
 
             "severity": ai_dashboard.get(
                 "severity",
-                business["risk_category"]
+                business["risk_level"]
             ),
 
             "probability": probability,

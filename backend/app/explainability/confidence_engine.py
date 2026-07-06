@@ -1,52 +1,42 @@
+"""
+CustomerPulse AI
+Enterprise Confidence Engine
+"""
+
+from typing import Dict
+
+
 class ConfidenceEngine:
 
     @staticmethod
     def calculate(
+        prediction_probability: float,
+        top_feature_importance: float,
+    ) -> Dict:
 
-        prediction_probability,
-
-        top_feature_importance
-
-    ):
-
-        confidence = round(
-
-            prediction_probability * 100,
-
-            2
-
+        confidence = (
+            prediction_probability * 70 +
+            min(top_feature_importance * 100, 100) * 0.30
         )
 
-        if confidence >= 95:
+        confidence = round(confidence, 2)
 
+        if confidence >= 95:
             level = "Very High"
 
         elif confidence >= 85:
-
             level = "High"
 
         elif confidence >= 70:
-
             level = "Medium"
 
         else:
-
             level = "Low"
 
         return {
 
-            "prediction_confidence": confidence,
+            "confidence_score": confidence,
 
-            "confidence_level": level,
-
-            "top_feature_strength":
-
-                round(
-
-                    float(top_feature_importance),
-
-                    3
-
-                )
+            "confidence_level": level
 
         }

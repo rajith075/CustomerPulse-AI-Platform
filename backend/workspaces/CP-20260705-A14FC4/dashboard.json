@@ -1,0 +1,119 @@
+{
+    "kpis": {
+        "total_customers": 100,
+        "revenue_at_risk": 380741.5,
+        "average_health_score": 79.5,
+        "high_risk_customers": 3
+    },
+    "revenue_chart": [
+        {
+            "month": "Jan",
+            "revenue": 7338
+        },
+        {
+            "month": "Feb",
+            "revenue": 8192
+        },
+        {
+            "month": "Mar",
+            "revenue": 7787
+        },
+        {
+            "month": "Apr",
+            "revenue": 7597
+        },
+        {
+            "month": "May",
+            "revenue": 8889
+        },
+        {
+            "month": "Jun",
+            "revenue": 10790
+        }
+    ],
+    "health": {
+        "overall_score": 79.5,
+        "healthy": 56,
+        "moderate": 27,
+        "at_risk": 14,
+        "critical": 3,
+        "healthy_percentage": 56.0,
+        "moderate_percentage": 27.0,
+        "at_risk_percentage": 14.0,
+        "critical_percentage": 3.0
+    },
+    "customer_segmentation": {
+        "total": 100,
+        "segments": [
+            {
+                "name": "High Value",
+                "count": 0,
+                "percentage": 0.0,
+                "color": "#D9FF3F"
+            },
+            {
+                "name": "Loyal",
+                "count": 48,
+                "percentage": 48.0,
+                "color": "#3B82F6"
+            },
+            {
+                "name": "At Risk",
+                "count": 52,
+                "percentage": 52.0,
+                "color": "#F97316"
+            },
+            {
+                "name": "New",
+                "count": 0,
+                "percentage": 0.0,
+                "color": "#8B5CF6"
+            },
+            {
+                "name": "Inactive",
+                "count": 0,
+                "percentage": 0.0,
+                "color": "#EF4444"
+            }
+        ]
+    },
+    "risk_distribution": [
+        {
+            "level": "Low",
+            "customers": 3,
+            "percentage": 3.0
+        },
+        {
+            "level": "Medium",
+            "customers": 94,
+            "percentage": 94.0
+        },
+        {
+            "level": "High",
+            "customers": 3,
+            "percentage": 3.0
+        },
+        {
+            "level": "Critical",
+            "customers": 0,
+            "percentage": 0.0
+        }
+    ],
+    "executive_summary": {
+        "headline": "Executive AI Unavailable",
+        "overall_status": "Unknown",
+        "priority": "Low",
+        "executive_score": 0,
+        "executive_summary": "Unable to generate executive insights.",
+        "key_insights": [],
+        "business_risks": [],
+        "growth_opportunities": [],
+        "recommended_actions": [],
+        "next_week_focus": [],
+        "financial_outlook": "Unknown",
+        "confidence": "Low"
+    },
+    "decision_center": {
+        "actions": []
+    }
+}

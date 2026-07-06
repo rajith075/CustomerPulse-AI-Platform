@@ -1,0 +1,183 @@
+{
+    "kpis": {
+        "total_customers": 100,
+        "revenue_at_risk": 471003.13,
+        "average_health_score": 80.4,
+        "high_risk_customers": 8
+    },
+    "revenue_chart": [
+        {
+            "month": "Jan",
+            "revenue": 8060
+        },
+        {
+            "month": "Feb",
+            "revenue": 9268
+        },
+        {
+            "month": "Mar",
+            "revenue": 10317
+        },
+        {
+            "month": "Apr",
+            "revenue": 9882
+        },
+        {
+            "month": "May",
+            "revenue": 9565
+        },
+        {
+            "month": "Jun",
+            "revenue": 11901
+        }
+    ],
+    "health": {
+        "overall_score": 80.4,
+        "healthy": 66,
+        "moderate": 15,
+        "at_risk": 11,
+        "critical": 8,
+        "healthy_percentage": 66.0,
+        "moderate_percentage": 15.0,
+        "at_risk_percentage": 11.0,
+        "critical_percentage": 8.0
+    },
+    "customer_segmentation": {
+        "total": 100,
+        "segments": [
+            {
+                "name": "High Value",
+                "count": 0,
+                "percentage": 0.0,
+                "color": "#D9FF3F"
+            },
+            {
+                "name": "Loyal",
+                "count": 54,
+                "percentage": 54.0,
+                "color": "#3B82F6"
+            },
+            {
+                "name": "At Risk",
+                "count": 45,
+                "percentage": 45.0,
+                "color": "#F97316"
+            },
+            {
+                "name": "New",
+                "count": 0,
+                "percentage": 0.0,
+                "color": "#8B5CF6"
+            },
+            {
+                "name": "Inactive",
+                "count": 1,
+                "percentage": 1.0,
+                "color": "#EF4444"
+            }
+        ]
+    },
+    "risk_distribution": [
+        {
+            "level": "Low",
+            "customers": 3,
+            "percentage": 3.0
+        },
+        {
+            "level": "Medium",
+            "customers": 89,
+            "percentage": 89.0
+        },
+        {
+            "level": "High",
+            "customers": 8,
+            "percentage": 8.0
+        },
+        {
+            "level": "Critical",
+            "customers": 0,
+            "percentage": 0.0
+        }
+    ],
+    "executive_summary": {
+        "headline": "Revenue Growth Amidst Significant Customer Risk",
+        "overall_status": "Growth with Retention Challenges",
+        "overall_status_description": "Revenue shows positive growth, but a substantial portion of customers are at risk. Proactive retention strategies are crucial.",
+        "priority": "Mitigate Customer Revenue Risk",
+        "priority_description": "Nearly half a million in revenue is at risk from 8 high-risk customers. Immediate action is needed to protect this revenue.",
+        "executive_score": 75,
+        "confidence_title": "High Confidence",
+        "confidence_explanation": "Analysis is based on comprehensive dashboard data, providing clear insights into customer health and financial trends. Data consistency supports reliable conclusions.",
+        "executive_summary": "The company demonstrates positive revenue growth, culminating in a strong June performance. However, a significant portion of the customer base, specifically 19% (11% at-risk, 8% critical) and 8 high-risk customers, represents $471,003.13 in revenue at risk. While 66% of customers are healthy, the large 'At Risk' segment (45%) and 1% inactive customers require immediate attention. Proactive customer success initiatives are vital to secure existing revenue and sustain growth.",
+        "key_insights": [
+            "Revenue trend shows positive growth, with June reaching $11,901.",
+            "19% of customers are either at-risk or critical, totaling 19 customers.",
+            "$471,003.13 revenue is at risk from 8 high-risk customers."
+        ],
+        "business_risks": [
+            "Significant revenue at risk from high-risk customers.",
+            "Large 'At Risk' customer segment (45%) needs attention.",
+            "Potential churn from 19% of customers in poor health."
+        ],
+        "growth_opportunities": [
+            "Convert 'Moderate' health customers to 'Healthy' status.",
+            "Re-engage the 1% inactive customer segment.",
+            "Leverage loyal customer base for referrals and upsells."
+        ],
+        "recommended_actions": [
+            "Prioritize engagement with 8 high-risk customers immediately.",
+            "Develop targeted retention campaigns for at-risk segments.",
+            "Analyze root causes for customer health decline."
+        ],
+        "next_week_focus": [
+            "Contact all 8 high-risk customers.",
+            "Review 'At Risk' customer segment data.",
+            "Plan Q3 customer success initiatives."
+        ],
+        "financial_outlook": "The financial outlook is positive with consistent revenue growth. However, the substantial revenue at risk poses a significant threat to future stability. Proactive customer retention is critical to secure current revenue and ensure sustained financial health."
+    },
+    "decision_center": {
+        "actions": [
+            {
+                "title": "Launch Executive-Led Intervention for Critical Customers",
+                "description": "Initiate an immediate, executive-led intervention program targeting the 8 high-risk/critical customers. This involves direct outreach from senior leadership (e.g., CCO, VP Customer Success), offering tailored solutions, addressing specific pain points, and demonstrating a strong commitment to their success.",
+                "reason": "These 8 customers represent a significant portion of the $471,003.13 revenue at risk. Immediate, personalized attention is crucial to prevent churn, protect this revenue, and stabilize these critical accounts.",
+                "priority": "Critical",
+                "category": "Revenue",
+                "impact": "Protect $471,003.13 Revenue and Retain 8 Critical Customers",
+                "confidence": "95%",
+                "estimated_time": "This Week"
+            },
+            {
+                "title": "Implement Proactive Engagement for 'At Risk' Customer Segment",
+                "description": "Develop and deploy a targeted, multi-channel engagement campaign for the 45% of customers identified as 'At Risk' in the segmentation, and the 11% in 'at_risk' health. This campaign should focus on re-onboarding key features, proactive support, gathering feedback, and demonstrating value through personalized communications and success resources.",
+                "reason": "A large portion of the customer base is showing signs of potential churn, even if not yet critical. Proactive engagement will improve their health scores, reduce the likelihood of deterioration, and prevent future revenue loss by addressing concerns before they escalate.",
+                "priority": "High",
+                "category": "Retention",
+                "impact": "Reduce Churn Risk for 45% of Customers by 10%",
+                "confidence": "90%",
+                "estimated_time": "Next 7 Days"
+            },
+            {
+                "title": "Establish High-Value Customer Identification and Strategy",
+                "description": "Define clear criteria for identifying 'High Value' customers (e.g., based on Annual Recurring Revenue, strategic importance, or growth potential). Once identified, create a dedicated strategy including executive sponsorship, personalized success plans, and exclusive access to new features or support tiers to maximize their lifetime value.",
+                "reason": "The current segmentation shows 0% 'High Value' customers, indicating a critical gap in understanding and nurturing the most profitable relationships. Identifying and prioritizing these customers is essential for maximizing Customer Lifetime Value (CLV), driving growth, and ensuring long-term profitability.",
+                "priority": "High",
+                "category": "Growth",
+                "impact": "Increase CLV for Top Tier Customers by 5% within 90 days",
+                "confidence": "88%",
+                "estimated_time": "This Month"
+            },
+            {
+                "title": "Audit and Refine Customer Health Scoring and Segmentation Logic",
+                "description": "Conduct an immediate audit of the current customer health scoring model and segmentation logic. Specifically, investigate and resolve discrepancies between 'At Risk' segment (45%), 'at_risk' health (11%), 'critical' health (8%), and 'Medium' risk (89%). Refine underlying algorithms and data inputs to provide a consistent and actionable view of customer risk and value.",
+                "reason": "Inconsistent data and segmentation hinder effective decision-making and resource allocation for retention and growth initiatives. A robust, unified, and consistent system is fundamental for accurately identifying customer states and deploying targeted, efficient interventions.",
+                "priority": "Medium",
+                "category": "Operations",
+                "impact": "Improve Accuracy of Customer Interventions by 20% within 30 days",
+                "confidence": "91%",
+                "estimated_time": "This Month"
+            }
+        ]
+    }
+}

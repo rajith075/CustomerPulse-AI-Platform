@@ -1,38 +1,49 @@
+"""
+Recommendation Engine
+"""
+
+
 class RecommendationEngine:
 
     @staticmethod
-    def generate(probability):
+    def calculate(
 
-        recommendations = []
+        risk_level: str,
 
-        if probability >= 0.85:
+        subscription: str,
 
-            recommendations.extend([
+    ):
 
-                "Assign dedicated retention manager.",
+        if risk_level == "Critical":
 
-                "Offer personalized renewal discount.",
+            return {
 
-                "Schedule executive follow-up within 24 hours."
+                "retention_strategy":
+                    "Immediately assign a Customer Success Manager, offer a loyalty discount, and schedule an executive follow-up within 24 hours."
 
-            ])
+            }
 
-        elif probability >= 0.60:
+        elif risk_level == "High":
 
-            recommendations.extend([
+            return {
 
-                "Provide loyalty rewards.",
+                "retention_strategy":
+                    "Provide a personalized retention offer and proactively contact the customer."
 
-                "Offer premium support."
+            }
 
-            ])
+        elif risk_level == "Medium":
 
-        else:
+            return {
 
-            recommendations.append(
+                "retention_strategy":
+                    "Increase engagement through personalized campaigns and monitor customer activity."
 
-                "Maintain regular customer engagement."
+            }
 
-            )
+        return {
 
-        return recommendations
+            "retention_strategy":
+                "Maintain regular engagement and continue delivering value."
+
+        }

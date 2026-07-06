@@ -1,32 +1,65 @@
+"""
+Enterprise Risk Engine
+"""
+
+from typing import Dict
+
+
 class RiskEngine:
 
     @staticmethod
-    def category(probability):
+    def calculate(
 
-        if probability >= 0.85:
-            return "Critical"
+        churn_percentage: float,
 
-        elif probability >= 0.65:
-            return "High"
+        health_score: float,
 
-        elif probability >= 0.40:
-            return "Medium"
+        revenue_at_risk: float,
 
-        return "Low"
+    ) -> Dict:
 
-    @staticmethod
-    def priority(category):
+        score = (
 
-        priorities = {
+            churn_percentage * 0.40 +
 
-            "Critical": "Immediate",
+            (100 - health_score) * 0.30 +
 
-            "High": "High",
+            min(revenue_at_risk / 1000, 100) * 0.30
 
-            "Medium": "Normal",
+        )
 
-            "Low": "Low"
+        score = round(score, 2)
+
+        if score >= 80:
+
+            risk = "Critical"
+
+            priority = "Immediate"
+
+        elif score >= 60:
+
+            risk = "High"
+
+            priority = "High"
+
+        elif score >= 40:
+
+            risk = "Medium"
+
+            priority = "Medium"
+
+        else:
+
+            risk = "Low"
+
+            priority = "Normal"
+
+        return {
+
+            "risk_score": score,
+
+            "risk_level": risk,
+
+            "priority": priority
 
         }
-
-        return priorities[category]

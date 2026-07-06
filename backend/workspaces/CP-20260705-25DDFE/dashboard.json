@@ -1,0 +1,183 @@
+{
+    "kpis": {
+        "total_customers": 100,
+        "revenue_at_risk": 380741.5,
+        "average_health_score": 79.5,
+        "high_risk_customers": 3
+    },
+    "revenue_chart": [
+        {
+            "month": "Jan",
+            "revenue": 7338
+        },
+        {
+            "month": "Feb",
+            "revenue": 8192
+        },
+        {
+            "month": "Mar",
+            "revenue": 7787
+        },
+        {
+            "month": "Apr",
+            "revenue": 7597
+        },
+        {
+            "month": "May",
+            "revenue": 8889
+        },
+        {
+            "month": "Jun",
+            "revenue": 10790
+        }
+    ],
+    "health": {
+        "overall_score": 79.5,
+        "healthy": 56,
+        "moderate": 27,
+        "at_risk": 14,
+        "critical": 3,
+        "healthy_percentage": 56.0,
+        "moderate_percentage": 27.0,
+        "at_risk_percentage": 14.0,
+        "critical_percentage": 3.0
+    },
+    "customer_segmentation": {
+        "total": 100,
+        "segments": [
+            {
+                "name": "High Value",
+                "count": 0,
+                "percentage": 0.0,
+                "color": "#D9FF3F"
+            },
+            {
+                "name": "Loyal",
+                "count": 48,
+                "percentage": 48.0,
+                "color": "#3B82F6"
+            },
+            {
+                "name": "At Risk",
+                "count": 52,
+                "percentage": 52.0,
+                "color": "#F97316"
+            },
+            {
+                "name": "New",
+                "count": 0,
+                "percentage": 0.0,
+                "color": "#8B5CF6"
+            },
+            {
+                "name": "Inactive",
+                "count": 0,
+                "percentage": 0.0,
+                "color": "#EF4444"
+            }
+        ]
+    },
+    "risk_distribution": [
+        {
+            "level": "Low",
+            "customers": 3,
+            "percentage": 3.0
+        },
+        {
+            "level": "Medium",
+            "customers": 94,
+            "percentage": 94.0
+        },
+        {
+            "level": "High",
+            "customers": 3,
+            "percentage": 3.0
+        },
+        {
+            "level": "Critical",
+            "customers": 0,
+            "percentage": 0.0
+        }
+    ],
+    "executive_summary": {
+        "headline": "Revenue Growth Amidst Moderate Customer Health and Risk",
+        "overall_status": "Needs Attention",
+        "overall_status_description": "The company shows revenue growth but faces significant customer health challenges. A large portion of customers are categorized as 'At Risk' or 'Moderate'.",
+        "priority": "Customer Retention & Risk Mitigation",
+        "priority_description": "Over half of the customer base is 'At Risk' in segmentation, and 17% are 'at_risk' or 'critical' in health. Protecting revenue at risk is crucial for sustained growth.",
+        "executive_score": 0,
+        "confidence_title": "High Confidence",
+        "confidence_explanation": "The analysis is based directly on provided dashboard metrics and current customer data. Conclusions are drawn from explicit health scores, segmentation, and risk distribution.",
+        "executive_summary": "The company is experiencing positive revenue growth, with June showing the highest revenue. However, customer health presents a significant challenge, as 52% of the customer base is categorized as 'At Risk' in segmentation, and 17% are either 'at_risk' or 'critical' in health scores. This translates to a substantial revenue at risk of $380,741.5. While the average health score is moderate at 79.5, the concentration of risk in a large customer segment requires immediate attention. Proactive engagement with these vulnerable customers is essential to mitigate potential churn and secure future revenue streams.",
+        "key_insights": [
+            "Revenue trend is positive, with consistent month-over-month growth.",
+            "52% of customers are 'At Risk' in segmentation, indicating churn potential.",
+            "$380,741.5 revenue is at risk from 3 high-risk customers."
+        ],
+        "business_risks": [
+            "Significant portion (52%) of customers are categorized as 'At Risk'.",
+            "$380,741.5 revenue is vulnerable from 3 high-risk accounts.",
+            "17% of customers are 'at_risk' or 'critical' in health scores."
+        ],
+        "growth_opportunities": [
+            "Sustained positive revenue trend indicates market opportunity.",
+            "Improving health of 27% 'Moderate' customers can unlock value.",
+            "Deepen engagement with 48% 'Loyal' customers for expansion."
+        ],
+        "recommended_actions": [
+            "Prioritize engagement with 3 high-risk customers immediately.",
+            "Develop targeted retention strategies for 52% 'At Risk' segment.",
+            "Implement health improvement plans for 27% 'Moderate' customers."
+        ],
+        "next_week_focus": [
+            "Contact 3 high-risk customers.",
+            "Analyze 'At Risk' segment churn drivers.",
+            "Review 'Moderate' customer engagement."
+        ],
+        "financial_outlook": "Revenue trend is positive, showing consistent growth through June. However, the significant revenue at risk ($380,741.5) from high-risk customers poses a financial vulnerability. Proactive customer retention efforts are critical to secure this revenue and ensure continued positive financial performance."
+    },
+    "decision_center": {
+        "actions": [
+            {
+                "title": "Executive-Led Intervention for Critical High-Value Accounts",
+                "description": "Immediately assign a dedicated executive sponsor (e.g., CEO, CRO, CCO) to each of the 3 high-risk customers responsible for $380,741.5 in revenue. The sponsor will conduct personalized outreach to understand their specific challenges, address pain points, and present tailored solutions to prevent churn.",
+                "reason": "These 3 customers represent 3% of the customer base but account for a disproportionately high amount of revenue at risk. Direct executive involvement signals commitment and is crucial for retaining these critical accounts and protecting significant revenue.",
+                "priority": "Critical",
+                "category": "Revenue",
+                "impact": "Protect $380,741.5 Revenue",
+                "confidence": "95%",
+                "estimated_time": "Today"
+            },
+            {
+                "title": "Proactive Value Realization Program for Medium-Risk Customers",
+                "description": "Launch a structured, proactive engagement program targeting the 94% of customers identified as 'Medium' risk (which includes the 52% 'At Risk' segment). This program will involve Customer Success Managers conducting quarterly business reviews (QBRs) focused on demonstrating value, identifying unmet needs, and ensuring optimal product adoption to prevent health score degradation.",
+                "reason": "A vast majority of our customer base (94%) is in the 'Medium' risk category, indicating a significant pool susceptible to future churn. Proactive value realization will stabilize this segment, improve overall health, and reduce the flow into critical risk.",
+                "priority": "High",
+                "category": "Customer Success",
+                "impact": "Reduce churn from 'Medium Risk' segment by 8%",
+                "confidence": "90%",
+                "estimated_time": "This Week"
+            },
+            {
+                "title": "Root Cause Analysis of Customer Health Score Decline",
+                "description": "Initiate a cross-functional task force (Product, CS, Sales, Data Analytics) to conduct a deep dive into the common factors and behavioral patterns preceding a customer's decline into 'At Risk' or 'Critical' health scores. Focus on identifying specific product usage gaps, support ticket trends, or feature requests.",
+                "reason": "Understanding the systemic reasons behind customer health degradation is essential for long-term churn prevention and operational efficiency. This analysis will inform product improvements, service enhancements, and more effective early warning systems.",
+                "priority": "High",
+                "category": "Operations",
+                "impact": "Improve early churn detection by 15%",
+                "confidence": "88%",
+                "estimated_time": "Next 7 Days"
+            },
+            {
+                "title": "Develop a Customer Advocacy and Expansion Program for Loyal Customers",
+                "description": "Design and implement a formal program to leverage the 48% 'Loyal' customer segment. This includes identifying potential advocates for case studies and testimonials, establishing a referral incentive program, and proactively identifying upsell/cross-sell opportunities based on their successful product usage.",
+                "reason": "Loyal customers represent a significant untapped resource for growth. Actively engaging them can drive new revenue through referrals, increase Customer Lifetime Value (CLV) through expansion, and strengthen brand reputation, contributing to overall profitability.",
+                "priority": "Medium",
+                "category": "Growth",
+                "impact": "Increase referral-driven revenue by 7%",
+                "confidence": "85%",
+                "estimated_time": "This Month"
+            }
+        ]
+    }
+}

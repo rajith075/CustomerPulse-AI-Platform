@@ -23,6 +23,14 @@ RAW_DATASET = DATASET_DIR / "raw"
 PROCESSED_DATASET = DATASET_DIR / "processed"
 
 FINAL_DATASET = DATASET_DIR / "final"
+# ==========================================================
+# Processed Dataset
+# ==========================================================
+
+PROCESSED_DATASET_PATH = PROCESSED_DATASET / "cleaned_customer_data.csv"
+PROCESSED_DATASET_PATH = (
+    PROCESSED_DATASET / "cleaned_customer_data.csv"
+)
 
 # ==========================================================
 # Saved Models Directory

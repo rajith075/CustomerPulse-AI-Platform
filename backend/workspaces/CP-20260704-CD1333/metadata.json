@@ -1,0 +1,13 @@
+{
+    "project_id": "CP-20260704-CD1333",
+    "company_name": null,
+    "filename": "cleaned_customer_data.csv",
+    "file_type": "csv",
+    "uploaded_at": "2026-07-04T23:43:32.510774",
+    "status": "validated",
+    "dataset_quality": 100.0,
+    "rows": 440832,
+    "columns": 11,
+    "prediction_completed": true,
+    "dashboard_generated": false
+}

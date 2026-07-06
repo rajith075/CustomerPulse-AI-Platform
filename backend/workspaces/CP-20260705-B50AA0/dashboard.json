@@ -1,0 +1,183 @@
+{
+    "kpis": {
+        "total_customers": 440832,
+        "revenue_at_risk": 991935362.86,
+        "average_health_score": 87.3,
+        "high_risk_customers": 16307
+    },
+    "revenue_chart": [
+        {
+            "month": "Jan",
+            "revenue": 40114966.0
+        },
+        {
+            "month": "Feb",
+            "revenue": 39757726.0
+        },
+        {
+            "month": "Mar",
+            "revenue": 40191901.0
+        },
+        {
+            "month": "Apr",
+            "revenue": 48181449.91
+        },
+        {
+            "month": "May",
+            "revenue": 55112535.82
+        },
+        {
+            "month": "Jun",
+            "revenue": 55078063.99
+        }
+    ],
+    "health": {
+        "overall_score": 87.3,
+        "healthy": 326559,
+        "moderate": 59359,
+        "at_risk": 37260,
+        "critical": 17654,
+        "healthy_percentage": 74.1,
+        "moderate_percentage": 13.5,
+        "at_risk_percentage": 8.5,
+        "critical_percentage": 4.0
+    },
+    "customer_segmentation": {
+        "total": 440832,
+        "segments": [
+            {
+                "name": "High Value",
+                "count": 0,
+                "percentage": 0.0,
+                "color": "#D9FF3F"
+            },
+            {
+                "name": "Loyal",
+                "count": 250231,
+                "percentage": 56.8,
+                "color": "#3B82F6"
+            },
+            {
+                "name": "At Risk",
+                "count": 128514,
+                "percentage": 29.2,
+                "color": "#F97316"
+            },
+            {
+                "name": "New",
+                "count": 15203,
+                "percentage": 3.4,
+                "color": "#8B5CF6"
+            },
+            {
+                "name": "Inactive",
+                "count": 46884,
+                "percentage": 10.6,
+                "color": "#EF4444"
+            }
+        ]
+    },
+    "risk_distribution": [
+        {
+            "level": "Low",
+            "customers": 191998,
+            "percentage": 43.6
+        },
+        {
+            "level": "Medium",
+            "customers": 232527,
+            "percentage": 52.7
+        },
+        {
+            "level": "High",
+            "customers": 16307,
+            "percentage": 3.7
+        },
+        {
+            "level": "Critical",
+            "customers": 0,
+            "percentage": 0.0
+        }
+    ],
+    "executive_summary": {
+        "headline": "Revenue Growth Strong, but Customer Risk and Inactivity High",
+        "overall_status": "Growth with Significant Risk",
+        "overall_status_description": "Recent revenue growth is strong, but a substantial portion of customers are at risk or inactive, posing a significant threat to future revenue.",
+        "priority": "Mitigate Customer Risk",
+        "priority_description": "Nearly a billion in revenue is at risk, and a large segment of customers are identified as 'At Risk' or 'Inactive'. Proactive intervention is crucial.",
+        "executive_score": 75,
+        "confidence_title": "High Confidence",
+        "confidence_explanation": "The analysis is based on comprehensive, clearly defined dashboard metrics covering customer health, segmentation, and financial performance. Data consistency across key indicators supports certainty.",
+        "executive_summary": "The company demonstrates strong recent revenue growth, with May and June showing significant increases to $55M. However, this positive trend is overshadowed by substantial customer portfolio risks. Nearly $1 billion in revenue is at risk, and a large percentage of customers are categorized as 'At Risk' (29.2%) or 'Inactive' (10.6%). While the overall customer health score is 87.3, the presence of 16,307 high-risk customers and 17,654 critical customers demands immediate attention. Proactive strategies are essential to convert 'At Risk' and 'Inactive' segments and protect future revenue streams.",
+        "key_insights": [
+            "Revenue has grown significantly, reaching $55M in May and June.",
+            "$991.9M in revenue is currently at risk, impacting future stability.",
+            "29.2% of customers are 'At Risk', and 10.6% are 'Inactive'."
+        ],
+        "business_risks": [
+            "Nearly $1 billion in revenue is currently at risk.",
+            "A large segment (29.2%) of customers are classified as 'At Risk'.",
+            "10.6% of customers are inactive, representing potential churn."
+        ],
+        "growth_opportunities": [
+            "Convert 'Moderate' health customers to 'Healthy' status.",
+            "Re-engage 'Inactive' customers to recover lost value.",
+            "Focus on retaining 'Loyal' customers to ensure stability."
+        ],
+        "recommended_actions": [
+            "Implement targeted campaigns for 'At Risk' and 'Inactive' segments.",
+            "Enhance customer success efforts for 'High' and 'Moderate' risk customers.",
+            "Analyze 'High Value' segment (0 count) for data integrity or definition."
+        ],
+        "next_week_focus": [
+            "Deep dive into 'At Risk' customer segment.",
+            "Develop re-engagement plan for inactive customers.",
+            "Review 'High Value' customer segment definition."
+        ],
+        "financial_outlook": "The recent revenue surge to $55M monthly is positive, indicating strong market performance. However, the substantial $991.9M revenue at risk presents a significant financial vulnerability. Proactive customer retention and risk mitigation efforts are critical to sustain growth and ensure long-term financial stability."
+    },
+    "decision_center": {
+        "actions": [
+            {
+                "title": "Launch Emergency Revenue Protection for High-Risk Accounts",
+                "description": "Immediately deploy a dedicated, high-touch intervention team (senior CSMs/Account Executives) to engage the 16,307 customers identified as 'High Risk'. This team will conduct personalized outreach, diagnose root causes of risk, offer tailored solutions, and negotiate retention terms to prevent imminent churn.",
+                "reason": "These customers represent the most critical and immediate threat, accounting for nearly $1 billion in revenue at risk. Direct, personalized intervention is essential to mitigate this severe financial exposure and protect current revenue streams.",
+                "priority": "Critical",
+                "category": "Revenue",
+                "impact": "Protect $991M Revenue",
+                "confidence": "95%",
+                "estimated_time": "Next 7 Days"
+            },
+            {
+                "title": "Implement Proactive Churn Prevention for 'At Risk' Segment",
+                "description": "Design and launch a multi-channel proactive engagement campaign targeting the 128,514 customers in the 'At Risk' segment. This includes automated personalized communications (e.g., value reinforcement, usage tips, feature adoption guides) combined with targeted human outreach for specific sub-segments to address early signs of disengagement.",
+                "reason": "This large segment (29.2% of customers) is highly susceptible to churn. Proactive intervention at this stage is crucial to prevent their health from deteriorating further into the 'High Risk' category and to secure future revenue streams.",
+                "priority": "High",
+                "category": "Retention",
+                "impact": "Recover 128K Customers",
+                "confidence": "91%",
+                "estimated_time": "This Month"
+            },
+            {
+                "title": "Execute 'Inactive' Customer Re-engagement and Win-back Campaign",
+                "description": "Develop and launch a targeted re-engagement campaign for the 46,884 'Inactive' customers. This campaign will utilize personalized offers, highlight recent product enhancements, and provide clear, incentivized pathways for re-activation, potentially including a dedicated re-onboarding experience.",
+                "reason": "Re-activating inactive customers is a cost-effective strategy for revenue recovery and churn reduction. This segment represents significant dormant potential that can be converted into active, revenue-generating accounts.",
+                "priority": "High",
+                "category": "Growth",
+                "impact": "Recover 46K Customers",
+                "confidence": "87%",
+                "estimated_time": "This Month"
+            },
+            {
+                "title": "Refine Segmentation and Proactive Health for Medium Risk & Loyal Customers",
+                "description": "Initiate a strategic project to refine the customer segmentation model, specifically to identify and classify 'High Value' customers (currently 0%). Concurrently, establish a robust proactive health monitoring and intervention framework for the 232,527 'Medium' risk and 250,231 'Loyal' customers, including automated alerts and playbooks for CSMs.",
+                "reason": "A refined segmentation is vital for targeted growth and profitability strategies. Proactive management of 'Medium' risk customers prevents future churn, while nurturing 'Loyal' customers ensures long-term retention and potential for growth, safeguarding the overall customer base health.",
+                "priority": "Medium",
+                "category": "Customer Success",
+                "impact": "Improve Customer Health",
+                "confidence": "90%",
+                "estimated_time": "This Month"
+            }
+        ]
+    }
+}

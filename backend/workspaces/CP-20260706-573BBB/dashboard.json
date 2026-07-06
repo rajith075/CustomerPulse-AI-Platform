@@ -1,0 +1,183 @@
+{
+    "kpis": {
+        "total_customers": 500,
+        "revenue_at_risk": 2347074.69,
+        "average_health_score": 77.2,
+        "high_risk_customers": 34
+    },
+    "revenue_chart": [
+        {
+            "month": "Jan",
+            "revenue": 46672
+        },
+        {
+            "month": "Feb",
+            "revenue": 44201
+        },
+        {
+            "month": "Mar",
+            "revenue": 46890
+        },
+        {
+            "month": "Apr",
+            "revenue": 48423
+        },
+        {
+            "month": "May",
+            "revenue": 45818
+        },
+        {
+            "month": "Jun",
+            "revenue": 46917
+        }
+    ],
+    "health": {
+        "overall_score": 77.2,
+        "healthy": 272,
+        "moderate": 104,
+        "at_risk": 90,
+        "critical": 34,
+        "healthy_percentage": 54.4,
+        "moderate_percentage": 20.8,
+        "at_risk_percentage": 18.0,
+        "critical_percentage": 6.8
+    },
+    "customer_segmentation": {
+        "total": 500,
+        "segments": [
+            {
+                "name": "High Value",
+                "count": 0,
+                "percentage": 0.0,
+                "color": "#D9FF3F"
+            },
+            {
+                "name": "Loyal",
+                "count": 247,
+                "percentage": 49.4,
+                "color": "#3B82F6"
+            },
+            {
+                "name": "At Risk",
+                "count": 249,
+                "percentage": 49.8,
+                "color": "#F97316"
+            },
+            {
+                "name": "New",
+                "count": 1,
+                "percentage": 0.2,
+                "color": "#8B5CF6"
+            },
+            {
+                "name": "Inactive",
+                "count": 3,
+                "percentage": 0.6,
+                "color": "#EF4444"
+            }
+        ]
+    },
+    "risk_distribution": [
+        {
+            "level": "Low",
+            "customers": 18,
+            "percentage": 3.6
+        },
+        {
+            "level": "Medium",
+            "customers": 448,
+            "percentage": 89.6
+        },
+        {
+            "level": "High",
+            "customers": 34,
+            "percentage": 6.8
+        },
+        {
+            "level": "Critical",
+            "customers": 0,
+            "percentage": 0.0
+        }
+    ],
+    "executive_summary": {
+        "headline": "High Revenue Risk Amidst Stable Performance",
+        "overall_status": "Needs Immediate Attention",
+        "overall_status_description": "A significant portion of revenue is at risk, with nearly half the customer base categorized as 'At Risk'. While overall health is moderate, this poses a substantial threat.",
+        "priority": "Revenue Protection & Retention",
+        "priority_description": "The substantial revenue at risk and the large 'At Risk' customer segment necessitate immediate focus on retention and risk mitigation strategies to prevent churn.",
+        "executive_score": 65,
+        "confidence_title": "Moderate Confidence",
+        "confidence_explanation": "Analysis is based on comprehensive dashboard data, providing clear insights into customer health and revenue risk. The data directly highlights critical areas for action.",
+        "executive_summary": "Our customer portfolio shows a concerning trend with nearly half of our customers categorized as 'At Risk', directly contributing to over $2.3 million in revenue at risk. While the average customer health score is moderate and recent revenue trends are stable, the lack of new customer growth and the large 'At Risk' segment present significant challenges. Immediate action is required to mitigate these risks and protect our financial stability. Focusing on retention and understanding the root causes of customer dissatisfaction are paramount to ensure sustained business health and future growth.",
+        "key_insights": [
+            "Nearly half of our customer base is categorized as 'At Risk', mirroring our 'Loyal' segment.",
+            "Over $2.3 million in revenue is currently at risk, demanding immediate strategic intervention.",
+            "New customer acquisition is critically low, with only one new customer recorded."
+        ],
+        "business_risks": [
+            "Significant revenue at risk due to a large segment of 'At Risk' customers.",
+            "Stagnant new customer acquisition limits future growth potential and market expansion.",
+            "Potential for increased churn if 'At Risk' and 'Critical' customers are not addressed."
+        ],
+        "growth_opportunities": [
+            "Convert 'At Risk' customers to 'Loyal' through targeted engagement and value delivery.",
+            "Develop strategies to identify and grow a 'High Value' customer segment.",
+            "Increase new customer acquisition efforts to expand market share and revenue."
+        ],
+        "recommended_actions": [
+            "Implement targeted retention campaigns for 'At Risk' and 'Critical' customer segments.",
+            "Analyze root causes for the large 'At Risk' customer segment to inform interventions.",
+            "Develop a comprehensive strategy to significantly increase new customer acquisition."
+        ],
+        "next_week_focus": [
+            "Deep dive into 'At Risk' customer data to identify common pain points.",
+            "Prioritize direct outreach to the 34 high-risk customers for immediate support.",
+            "Review and optimize new customer acquisition funnels and marketing spend."
+        ],
+        "financial_outlook": "The financial outlook is stable in the short term based on recent revenue trends. However, the substantial revenue at risk and minimal new customer acquisition pose significant threats to long-term growth and profitability. Proactive customer retention and growth initiatives are critical to secure future financial performance."
+    },
+    "decision_center": {
+        "actions": [
+            {
+                "title": "Execute Executive-Led Intervention for High-Risk Accounts",
+                "description": "Mobilize a dedicated executive task force (CEO, CRO, CCO) to directly engage the 34 high-risk customers responsible for $2.3M in revenue at risk. Conduct immediate root cause analysis for each account's risk factors and implement tailored retention strategies, including personalized outreach, dedicated support, and potential contract adjustments.",
+                "reason": "This represents the most significant and immediate financial threat to the business. Direct executive involvement signals commitment and provides the necessary authority to resolve complex issues quickly, preventing substantial churn and protecting critical revenue.",
+                "priority": "Critical",
+                "category": "Revenue",
+                "impact": "Protect $2.3M Revenue",
+                "confidence": "95%",
+                "estimated_time": "This Week"
+            },
+            {
+                "title": "Launch Proactive Retention Campaign for 'At Risk' and 'Medium Risk' Segments",
+                "description": "Design and deploy a targeted customer success and re-engagement campaign for the 249 customers identified as 'At Risk' in segmentation and the 448 customers in the 'Medium' risk distribution. This campaign should focus on demonstrating value, addressing common pain points, and proactively offering solutions to prevent further health score degradation and potential churn.",
+                "reason": "A large portion of our customer base is either 'At Risk' or 'Medium Risk,' indicating a systemic vulnerability to churn. Proactive intervention at this stage is more cost-effective than reactive measures and can significantly improve overall customer health and retention rates.",
+                "priority": "High",
+                "category": "Retention",
+                "impact": "Reduce At-Risk Customers by 20%",
+                "confidence": "91%",
+                "estimated_time": "Next 7 Days"
+            },
+            {
+                "title": "Define and Strategize for High-Value Customer Segment",
+                "description": "Establish a clear framework for identifying and segmenting 'High Value' customers based on current and potential revenue, strategic importance, and engagement. Once identified, develop and implement specific account management and growth strategies to maximize their lifetime value and foster advocacy.",
+                "reason": "The current absence of a defined 'High Value' segment means we are not strategically nurturing our most profitable customers. Focusing on this segment is crucial for long-term revenue growth, profitability, and identifying opportunities for expansion and referrals.",
+                "priority": "High",
+                "category": "Growth",
+                "impact": "Increase CLV by 9%",
+                "confidence": "87%",
+                "estimated_time": "This Month"
+            },
+            {
+                "title": "Initiate Growth Task Force for New Customer Acquisition",
+                "description": "Form a cross-functional task force comprising Sales, Marketing, and Product leadership to analyze the root causes of the extremely low new customer acquisition (1 new customer). Develop and execute a targeted market entry or expansion strategy, leveraging insights from existing loyal customers and market demand to drive sustainable growth.",
+                "reason": "Stagnant revenue and negligible new customer acquisition are critical indicators of a lack of sustainable growth. A dedicated, data-driven approach is required to identify new market opportunities and build a robust pipeline for future revenue expansion.",
+                "priority": "Medium",
+                "category": "Growth",
+                "impact": "Increase New Customer Acquisition by 100%",
+                "confidence": "85%",
+                "estimated_time": "This Month"
+            }
+        ]
+    }
+}

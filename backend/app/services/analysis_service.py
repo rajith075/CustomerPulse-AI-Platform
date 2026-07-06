@@ -7,51 +7,77 @@ from app.intelligence.recommendation_engine import RecommendationEngine
 class AnalysisService:
 
     def analyze(
-
         self,
-
         customer,
-
-        prediction
-
+        prediction,
     ):
 
         probability = prediction["churn_probability"]
 
-        health = HealthEngine.calculate(customer)
+        # ----------------------------------------
+        # Customer Health
+        # ----------------------------------------
 
-        clv = RevenueEngine.estimated_clv(customer)
-
-        revenue = RevenueEngine.revenue_at_risk(
-
-            clv,
-
-            probability
-
+        health = HealthEngine.calculate(
+            support_calls=customer["Support Calls"],
+            payment_delay=customer["Payment Delay"],
+            usage_frequency=customer["Usage Frequency"],
+            tenure=customer["Tenure"],
+            churn_percentage=probability * 100,
+            subscription_type=customer["Subscription Type"],
+            contract_length=customer["Contract Length"],
         )
 
-        risk = RiskEngine.category(probability)
+        # ----------------------------------------
+        # Revenue Intelligence
+        # ----------------------------------------
 
-        priority = RiskEngine.priority(risk)
-
-        recommendations = RecommendationEngine.generate(
-
-            probability
-
+        revenue = RevenueEngine.calculate(
+            customer,
+            probability,
         )
+
+        # ----------------------------------------
+        # Enterprise Risk
+        # ----------------------------------------
+
+        risk = RiskEngine.calculate(
+            churn_percentage=probability * 100,
+            health_score=health["customer_health"],
+            revenue_at_risk=revenue["revenue_at_risk"],
+        )
+
+        # ----------------------------------------
+        # AI Recommendation
+        # ----------------------------------------
+
+        recommendations = RecommendationEngine.calculate(
+            risk_level=risk["risk_level"],
+            subscription=customer["Subscription Type"],
+        )
+
+        # ----------------------------------------
+        # Final Business Report
+        # ----------------------------------------
 
         return {
 
             "health_score": health,
 
-            "estimated_clv": clv,
+            "estimated_clv": revenue["estimated_clv"],
 
-            "revenue_at_risk": revenue,
+            "annual_revenue": revenue["annual_revenue"],
 
-            "risk_category": risk,
+            "revenue_at_risk": revenue["revenue_at_risk"],
 
-            "customer_priority": priority,
+            "revenue_category": revenue["revenue_category"],
 
-            "recommendations": recommendations
+            "risk_score": risk["risk_score"],
+
+            "risk_level": risk["risk_level"],
+
+            "customer_priority": risk["priority"],
+
+            "recommendations": recommendations,
 
         }

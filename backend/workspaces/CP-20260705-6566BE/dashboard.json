@@ -1,0 +1,183 @@
+{
+    "kpis": {
+        "total_customers": 440832,
+        "revenue_at_risk": 991935362.86,
+        "average_health_score": 87.3,
+        "high_risk_customers": 16307
+    },
+    "revenue_chart": [
+        {
+            "month": "Jan",
+            "revenue": 40114966.0
+        },
+        {
+            "month": "Feb",
+            "revenue": 39757726.0
+        },
+        {
+            "month": "Mar",
+            "revenue": 40191901.0
+        },
+        {
+            "month": "Apr",
+            "revenue": 48181449.91
+        },
+        {
+            "month": "May",
+            "revenue": 55112535.82
+        },
+        {
+            "month": "Jun",
+            "revenue": 55078063.99
+        }
+    ],
+    "health": {
+        "overall_score": 87.3,
+        "healthy": 326559,
+        "moderate": 59359,
+        "at_risk": 37260,
+        "critical": 17654,
+        "healthy_percentage": 74.1,
+        "moderate_percentage": 13.5,
+        "at_risk_percentage": 8.5,
+        "critical_percentage": 4.0
+    },
+    "customer_segmentation": {
+        "total": 440832,
+        "segments": [
+            {
+                "name": "High Value",
+                "count": 0,
+                "percentage": 0.0,
+                "color": "#D9FF3F"
+            },
+            {
+                "name": "Loyal",
+                "count": 250231,
+                "percentage": 56.8,
+                "color": "#3B82F6"
+            },
+            {
+                "name": "At Risk",
+                "count": 128514,
+                "percentage": 29.2,
+                "color": "#F97316"
+            },
+            {
+                "name": "New",
+                "count": 15203,
+                "percentage": 3.4,
+                "color": "#8B5CF6"
+            },
+            {
+                "name": "Inactive",
+                "count": 46884,
+                "percentage": 10.6,
+                "color": "#EF4444"
+            }
+        ]
+    },
+    "risk_distribution": [
+        {
+            "level": "Low",
+            "customers": 191998,
+            "percentage": 43.6
+        },
+        {
+            "level": "Medium",
+            "customers": 232527,
+            "percentage": 52.7
+        },
+        {
+            "level": "High",
+            "customers": 16307,
+            "percentage": 3.7
+        },
+        {
+            "level": "Critical",
+            "customers": 0,
+            "percentage": 0.0
+        }
+    ],
+    "executive_summary": {
+        "headline": "Strong Revenue Growth, Critical Customer Risk",
+        "overall_status": "Growth with Significant Risk",
+        "overall_status_description": "Revenue shows strong recent growth, but a substantial portion of customers and nearly $1 billion in revenue are at risk, demanding immediate attention.",
+        "priority": "Mitigate Revenue at Risk",
+        "priority_description": "Nearly $1 billion in revenue is at risk, requiring urgent strategies to protect our financial stability and customer base.",
+        "executive_score": 75,
+        "confidence_title": "High Confidence",
+        "confidence_explanation": "Analysis is based on comprehensive, recent dashboard data, providing clear insights into customer health and financial trends.",
+        "executive_summary": "The company demonstrates strong recent revenue growth, with June figures stabilizing at a high level. However, a critical concern is the nearly $1 billion in revenue at risk, impacting a significant portion of our customer base. While the overall health score is good, a large segment of customers are categorized as 'At Risk' or 'Inactive'. Proactive measures are essential to convert at-risk customers and capitalize on the positive revenue trend.",
+        "key_insights": [
+            "Recent revenue trend shows strong growth from April to June.",
+            "Nearly $1 billion in revenue is currently at risk.",
+            "29.2% of customers are in the 'At Risk' segment."
+        ],
+        "business_risks": [
+            "High revenue at risk threatens financial stability.",
+            "Large 'At Risk' and 'Inactive' segments indicate potential churn.",
+            "16,307 high-risk customers require immediate intervention."
+        ],
+        "growth_opportunities": [
+            "Leverage recent revenue growth for strategic investments.",
+            "Re-engage 'Inactive' customers to recover lost value.",
+            "Improve 'Moderate' health customer scores to 'Healthy'."
+        ],
+        "recommended_actions": [
+            "Implement targeted retention campaigns for at-risk customers.",
+            "Develop strategies to reactivate the 'Inactive' customer segment.",
+            "Prioritize outreach to the 16,307 high-risk customers."
+        ],
+        "next_week_focus": [
+            "Identify top 100 high-risk accounts.",
+            "Initiate targeted outreach to at-risk customers.",
+            "Analyze 'Inactive' customer churn reasons."
+        ],
+        "financial_outlook": "The company shows positive revenue momentum in recent months. However, the substantial revenue at risk poses a significant financial challenge. Proactive customer retention and risk mitigation are crucial to sustain growth and protect future profitability."
+    },
+    "decision_center": {
+        "actions": [
+            {
+                "title": "Launch Critical Customer Retention Task Force",
+                "description": "Establish a dedicated task force comprising senior Customer Success Managers and Account Executives to conduct immediate, personalized outreach and intervention for the 17,654 critical customers and 16,307 high-risk customers. This includes root cause analysis, tailored solution proposals, and executive-level engagement where necessary.",
+                "reason": "These customers represent the most immediate and severe churn risk, directly impacting the $991M revenue at risk. High-touch intervention is crucial to prevent imminent churn and stabilize these accounts.",
+                "priority": "Critical",
+                "category": "Revenue",
+                "impact": "Protect $991M Revenue, Reduce Critical Churn by 15%",
+                "confidence": "95%",
+                "estimated_time": "This Week"
+            },
+            {
+                "title": "Implement Proactive 'At Risk' Customer Engagement Program",
+                "description": "Develop and deploy a multi-channel engagement program (email, in-app messaging, targeted outreach from scaled CS) for the 128,514 customers identified as 'At Risk' in segmentation. The program will focus on re-educating on value, promoting underutilized features, and soliciting direct feedback to address early signs of dissatisfaction.",
+                "reason": "This large segment represents a significant portion of potential future churn. Proactive, scalable engagement can prevent further deterioration of customer health and mitigate future revenue loss before it becomes critical.",
+                "priority": "High",
+                "category": "Retention",
+                "impact": "Recover 128K At-Risk Customers, Improve Overall Customer Health",
+                "confidence": "91%",
+                "estimated_time": "Next 7 Days"
+            },
+            {
+                "title": "Execute Inactive Customer Win-Back Campaign",
+                "description": "Design and launch a targeted win-back campaign for the 46,884 'Inactive' customers. This campaign will utilize personalized messaging, special re-activation offers, and highlight recent product improvements or new features to incentivize their return. Include a feedback mechanism to understand reasons for inactivity.",
+                "reason": "Inactive customers represent a significant pool of previously engaged users who can be re-activated, contributing to immediate revenue growth and improving overall customer count. Understanding their reasons for inactivity provides valuable product and service insights.",
+                "priority": "High",
+                "category": "Growth",
+                "impact": "Re-activate 10-15% of Inactive Customers, Generate New Revenue",
+                "confidence": "87%",
+                "estimated_time": "This Month"
+            },
+            {
+                "title": "Optimize New Customer Onboarding & Early Retention Journey",
+                "description": "Review and enhance the onboarding and first 90-day engagement journey for the 15,203 'New' customers. Focus on personalized welcome sequences, early value realization milestones, proactive check-ins, and educational resources to ensure successful adoption and reduce early churn.",
+                "reason": "Strong initial engagement is foundational for long-term customer loyalty and higher Customer Lifetime Value (CLV). Proactively addressing potential friction points in the early stages prevents new customers from quickly becoming 'At Risk' or 'Inactive.'",
+                "priority": "Medium",
+                "category": "Customer Success",
+                "impact": "Increase New Customer Retention by 10%, Boost CLV by 5%",
+                "confidence": "90%",
+                "estimated_time": "Next 7 Days"
+            }
+        ]
+    }
+}

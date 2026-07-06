@@ -1,0 +1,142 @@
+{
+    "kpis": {
+        "total_customers": 100,
+        "revenue_at_risk": 380741.5,
+        "average_health_score": 79.5,
+        "high_risk_customers": 3
+    },
+    "revenue_chart": [
+        {
+            "month": "Jan",
+            "revenue": 7338
+        },
+        {
+            "month": "Feb",
+            "revenue": 8192
+        },
+        {
+            "month": "Mar",
+            "revenue": 7787
+        },
+        {
+            "month": "Apr",
+            "revenue": 7597
+        },
+        {
+            "month": "May",
+            "revenue": 8889
+        },
+        {
+            "month": "Jun",
+            "revenue": 10790
+        }
+    ],
+    "health": {
+        "overall_score": 79.5,
+        "healthy": 56,
+        "moderate": 27,
+        "at_risk": 14,
+        "critical": 3,
+        "healthy_percentage": 56.0,
+        "moderate_percentage": 27.0,
+        "at_risk_percentage": 14.0,
+        "critical_percentage": 3.0
+    },
+    "customer_segmentation": {
+        "total": 100,
+        "segments": [
+            {
+                "name": "High Value",
+                "count": 0,
+                "percentage": 0.0,
+                "color": "#D9FF3F"
+            },
+            {
+                "name": "Loyal",
+                "count": 48,
+                "percentage": 48.0,
+                "color": "#3B82F6"
+            },
+            {
+                "name": "At Risk",
+                "count": 52,
+                "percentage": 52.0,
+                "color": "#F97316"
+            },
+            {
+                "name": "New",
+                "count": 0,
+                "percentage": 0.0,
+                "color": "#8B5CF6"
+            },
+            {
+                "name": "Inactive",
+                "count": 0,
+                "percentage": 0.0,
+                "color": "#EF4444"
+            }
+        ]
+    },
+    "risk_distribution": [
+        {
+            "level": "Low",
+            "customers": 3,
+            "percentage": 3.0
+        },
+        {
+            "level": "Medium",
+            "customers": 94,
+            "percentage": 94.0
+        },
+        {
+            "level": "High",
+            "customers": 3,
+            "percentage": 3.0
+        },
+        {
+            "level": "Critical",
+            "customers": 0,
+            "percentage": 0.0
+        }
+    ],
+    "executive_summary": {
+        "headline": "Revenue Growth Amidst Significant Customer Risk",
+        "overall_status": "Growth with Significant Risk",
+        "overall_status_description": "The company shows strong revenue growth, but a large portion of customers are categorized as 'At Risk' in segmentation, and a significant revenue amount is at risk.",
+        "priority": "Mitigate Customer Risk",
+        "priority_description": "Over half of the customer base is segmented as 'At Risk,' and substantial revenue is vulnerable. Proactive retention efforts are crucial to protect future earnings.",
+        "executive_score": 70,
+        "confidence_title": "High Confidence",
+        "confidence_explanation": "Analysis is based directly on comprehensive dashboard data, providing clear metrics on customer health, segmentation, and revenue trends. No external assumptions were made.",
+        "executive_summary": "The business demonstrates positive revenue growth, culminating in a strong June performance. However, a critical concern is the high percentage of customers (52%) identified as 'At Risk' in segmentation, alongside a substantial $380,741.50 in revenue at risk. While the average health score is moderate at 79.5, the large 'At Risk' segment and 94% of customers being 'Medium' risk indicate potential future churn. Immediate focus must be on understanding and addressing the factors contributing to this widespread customer risk to sustain growth.",
+        "key_insights": [
+            "Revenue shows a strong upward trend, with June reaching 10,790.",
+            "52% of customers are in the 'At Risk' segment, indicating widespread vulnerability.",
+            "$380,741.50 in revenue is currently at risk, requiring urgent attention."
+        ],
+        "business_risks": [
+            "High percentage (52%) of customers in the 'At Risk' segment.",
+            "Significant revenue amount ($380,741.50) is currently at risk.",
+            "94% of customers are categorized as 'Medium' risk, indicating broad vulnerability."
+        ],
+        "growth_opportunities": [
+            "Leverage recent revenue growth to invest in customer retention.",
+            "Convert 'Moderate' health customers to 'Healthy' status.",
+            "Deepen engagement with the 48% 'Loyal' customer segment."
+        ],
+        "recommended_actions": [
+            "Initiate targeted campaigns for 'At Risk' segmented customers.",
+            "Analyze root causes for the 52% 'At Risk' customer segment.",
+            "Develop proactive strategies to reduce the $380K revenue at risk."
+        ],
+        "next_week_focus": [
+            "Identify 'At Risk' customer characteristics.",
+            "Prioritize outreach to high-value at-risk accounts.",
+            "Review customer success engagement models."
+        ],
+        "financial_outlook": "The financial outlook is positive due to recent revenue growth. However, the substantial revenue at risk and the large 'At Risk' customer segment pose a significant threat to sustained profitability. Proactive risk mitigation is essential to secure future financial stability."
+    },
+    "decision_center": {
+        "actions": []
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "kpis": {
+        "total_customers": 100,
+        "revenue_at_risk": 471003.13,
+        "average_health_score": 80.4,
+        "high_risk_customers": 8
+    },
+    "revenue_chart": [
+        {
+            "month": "Jan",
+            "revenue": 

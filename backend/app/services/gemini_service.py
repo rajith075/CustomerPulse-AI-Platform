@@ -1,3 +1,10 @@
+"""
+==========================================================
+CustomerPulse AI
+Gemini Service
+==========================================================
+"""
+
 import os
 import json
 import time
@@ -9,6 +16,10 @@ from google.genai import types
 
 class GeminiService:
 
+    # ======================================================
+    # Initialize Gemini Client
+    # ======================================================
+
     def __init__(self):
 
         load_dotenv()
@@ -16,18 +27,26 @@ class GeminiService:
         api_key = os.getenv("GEMINI_API_KEY")
 
         if not api_key:
+
             raise ValueError(
                 "GEMINI_API_KEY not found."
             )
 
-        self.client = genai.Client(api_key=api_key)
+        self.client = genai.Client(
+            api_key=api_key
+        )
 
         # Production Models
+
         self.primary_model = "gemini-2.5-flash"
 
         self.fallback_model = "gemini-2.0-flash"
 
         self.max_retries = 3
+
+    # ======================================================
+    # Call Gemini Model
+    # ======================================================
 
     def _call_model(self, model, prompt):
 
@@ -39,15 +58,19 @@ class GeminiService:
 
             config=types.GenerateContentConfig(
 
-                temperature=0.3,
+    temperature=0,
 
-                response_mime_type="application/json"
+    response_mime_type="application/json"
 
-            )
+)
 
         )
 
         return response.text
+
+    # ======================================================
+    # Generate Response
+    # ======================================================
 
     def generate(self, prompt):
 
@@ -93,6 +116,7 @@ class GeminiService:
                             .replace("```json", "")
                             .replace("```", "")
                             .strip()
+
                         )
 
                     return {
@@ -113,7 +137,9 @@ class GeminiService:
 
                     print()
 
-                    print(f"Attempt {attempt+1}")
+                    print(
+                        f"Attempt {attempt + 1}"
+                    )
 
                     print(error)
 
@@ -140,5 +166,73 @@ class GeminiService:
             "error": "All Gemini models failed.",
 
             "data": None
+
+        }
+
+    # ======================================================
+    # Generate JSON Only
+    # ======================================================
+
+    def generate_json(self, prompt):
+
+        result = self.generate(prompt)
+
+        if not result["success"]:
+
+            raise RuntimeError(
+
+                result["error"]
+
+            )
+
+        return result["data"]
+
+    # ======================================================
+    # Generate Full Result
+    # ======================================================
+
+    def generate_result(self, prompt):
+
+        return self.generate(prompt)
+
+    # ======================================================
+    # Health Check
+    # ======================================================
+
+    def ping(self):
+
+        try:
+
+            self.generate_json(
+
+                """
+                Return ONLY valid JSON.
+
+                {
+                    "status":"ok"
+                }
+                """
+
+            )
+
+            return True
+
+        except Exception:
+
+            return False
+
+    # ======================================================
+    # Model Information
+    # ======================================================
+
+    def get_models(self):
+
+        return {
+
+            "primary": self.primary_model,
+
+            "fallback": self.fallback_model,
+
+            "max_retries": self.max_retries
 
         }

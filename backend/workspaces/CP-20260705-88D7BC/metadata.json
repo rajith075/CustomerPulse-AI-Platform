@@ -1,0 +1,13 @@
+{
+    "project_id": "CP-20260705-88D7BC",
+    "company_name": null,
+    "filename": "customer_dataset_100_entries_with_names.csv",
+    "file_type": "csv",
+    "uploaded_at": "2026-07-05T12:42:16.660027",
+    "status": "validated",
+    "dataset_quality": 100.0,
+    "rows": 100,
+    "columns": 14,
+    "prediction_completed": true,
+    "dashboard_generated": true
+}
