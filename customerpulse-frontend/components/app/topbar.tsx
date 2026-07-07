@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useTheme } from "next-themes";
 
 import ExecutiveCalendar from "@/components/calendar/executive-calendar";
 import NotificationPanel from "@/components/notifications/notification-panel";
@@ -14,6 +15,7 @@ import {
   IconMoon,
   IconSearch,
   IconSparkles,
+  IconSun,
 } from "@tabler/icons-react";
 
 export default function Topbar() {
@@ -22,6 +24,17 @@ export default function Topbar() {
   const [notificationOpen, setNotificationOpen] = useState(false);
 
   const { unreadCount } = useNotifications();
+  const {
+  theme,
+  setTheme,
+} = useTheme();
+
+const [mounted, setMounted] =
+  useState(false);
+
+useEffect(() => {
+  setMounted(true);
+}, []);
 
   // ============================================
   // Fix Hydration Error
@@ -307,31 +320,61 @@ export default function Topbar() {
 
 </div>
 
-          {/* Theme */}
+          {/* Theme Toggle */}
 
-          <button
-            className="
-            flex
-            h-11
-            w-11
-            items-center
-            justify-center
-            rounded-2xl
-            border
-            border-white/[0.05]
-            bg-[#0A0A0A]
-            text-zinc-400
-            transition-all
-            duration-300
-            hover:border-white/10
-            hover:bg-[#111111]
-            hover:text-white
-            "
-          >
+<button
+  onClick={() =>
+    setTheme(
+      theme === "dark"
+        ? "light"
+        : "dark"
+    )
+  }
+  className="
+  flex
+  h-11
+  w-11
+  items-center
+  justify-center
+  rounded-2xl
+  border
+  border-white/[0.05]
+  bg-[#0A0A0A]
+  text-zinc-400
+  transition-all
+  duration-300
+  hover:border-[#D9FF3F]/30
+  hover:bg-[#111111]
+  hover:text-[#D9FF3F]
+  "
+>
 
-            <IconMoon size={18} />
+  {mounted &&
+    (theme === "dark" ? (
 
-          </button>
+      <IconSun
+        size={18}
+        className="
+        transition-all
+        duration-500
+        hover:rotate-180
+        "
+      />
+
+    ) : (
+
+      <IconMoon
+        size={18}
+        className="
+        transition-all
+        duration-500
+        hover:rotate-180
+        "
+      />
+
+    ))}
+
+</button>
 
         </div>
 

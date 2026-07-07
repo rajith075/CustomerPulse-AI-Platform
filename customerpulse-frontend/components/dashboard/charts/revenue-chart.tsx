@@ -107,7 +107,7 @@ export default function RevenueChart({
           hover:text-[#D9FF3F]
           "
         >
-          This Month
+          THIS QUARTER
         </button>
 
       </div>

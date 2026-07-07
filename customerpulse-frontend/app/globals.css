@@ -1,16 +1,45 @@
 @import "tailwindcss";
 
+/* ==========================================
+   Theme Variables
+========================================== */
+
+:root {
+
+  --background: #ffffff;
+  --foreground: #111111;
+
+  --panel: #ffffff;
+  --panel-light: #f5f5f5;
+
+  --border: rgba(0,0,0,.08);
+
+}
+
+.dark {
+
+  --background: #05070d;
+  --foreground: #ffffff;
+
+  --panel: #0e1323;
+  --panel-light: #141b2d;
+
+  --border: rgba(255,255,255,.06);
+
+}
+
+/* ==========================================
+   Tailwind Theme Tokens
+========================================== */
+
 @theme {
-  /* ==========================
-      Fonts
-  ========================== */
+
+  /* Fonts */
 
   --font-sans: "Geist", sans-serif;
   --font-mono: "Geist Mono", monospace;
 
-  /* ==========================
-      Radius
-  ========================== */
+  /* Radius */
 
   --radius-xs: 6px;
   --radius-sm: 8px;
@@ -19,73 +48,72 @@
   --radius-xl: 24px;
   --radius-2xl: 32px;
 
-  /* ==========================
-      Spacing
-  ========================== */
+  /* Spacing */
 
   --spacing-section: 2rem;
   --spacing-card: 1.5rem;
 
-  /* ==========================
-      Animation
-  ========================== */
+  /* Animation */
 
-  --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-premium: cubic-bezier(
+    0.16,
+    1,
+    0.3,
+    1
+  );
 
-  /* ==========================
-      Enterprise Colors
-  ========================== */
+  /* Colors */
 
-  --background: #05070d;
+  --background: var(--background);
 
-  --panel: #0e1323;
-  --panel-light: #141b2d;
+  --foreground: var(--foreground);
+
+  --panel: var(--panel);
+
+  --panel-light: var(--panel-light);
+
+  --border: var(--border);
 
   --yellow: #d9ff3f;
+
   --purple: #8b5cf6;
+
   --blue: #38bdf8;
+
   --green: #22c55e;
+
   --red: #ff4d6d;
 
-  --border: rgba(255,255,255,.06);
 }
 
 html {
+
   scroll-behavior: smooth;
+
 }
 
 body {
+
   min-height: 100vh;
 
-  background:
-    radial-gradient(circle at 12% 15%,
-      rgba(217,255,63,.08),
-      transparent 28%),
+  background: var(--background);
 
-    radial-gradient(circle at 88% 15%,
-      rgba(139,92,246,.08),
-      transparent 30%),
-
-    radial-gradient(circle at 50% 100%,
-      rgba(56,189,248,.05),
-      transparent 38%),
-
-    #05070d;
-
-  color: white;
+  color: var(--foreground);
 
   font-family: var(--font-sans);
 
   overflow-x: hidden;
 
-  -webkit-font-smoothing: antialiased;
+  transition:
 
-  text-rendering: optimizeLegibility;
+    background .35s ease,
+
+    color .35s ease;
+
 }
-
-/* ==========================
-    Premium Noise Texture
-========================== */
+/* ==========================================
+   Premium Noise Texture
+========================================== */
 
 body::before {
 
@@ -99,109 +127,153 @@ body::before {
 
   z-index: -1;
 
-  opacity: .03;
+  opacity: .025;
 
   background-image:
-    radial-gradient(circle, white 1px, transparent 1px);
+    radial-gradient(circle, currentColor 1px, transparent 1px);
 
   background-size: 24px 24px;
 
-  mix-blend-mode: overlay;
 }
 
-/* ==========================
-    Glass Utility
-========================== */
+/* ==========================================
+   Glass Utility
+========================================== */
 
 .glass {
 
-  background: rgba(255,255,255,.03);
+  background: color-mix(
+    in srgb,
+    var(--panel) 92%,
+    transparent
+  );
 
   backdrop-filter: blur(18px);
 
-  border: 1px solid rgba(255,255,255,.06);
+  border: 1px solid var(--border);
 
   box-shadow:
-    0 10px 50px rgba(0,0,0,.35);
+
+    0 12px 40px rgba(0,0,0,.18);
+
 }
 
-/* ==========================
-    Hover Card
-========================== */
+/* ==========================================
+   Premium Hover Card
+========================================== */
 
 .hover-card {
 
   transition:
+
     transform .35s var(--ease-premium),
+
     box-shadow .35s var(--ease-premium),
+
     border-color .35s var(--ease-premium);
+
 }
 
 .hover-card:hover {
 
   transform: translateY(-6px);
 
-  border-color: rgba(217,255,63,.18);
+  border-color: rgba(217,255,63,.20);
 
   box-shadow:
+
     0 0 45px rgba(217,255,63,.08);
+
 }
 
-/* ==========================
-    Glow Utilities
-========================== */
+/* ==========================================
+   Glow Utilities
+========================================== */
 
 .glow-yellow {
 
   box-shadow:
-    0 0 45px rgba(217,255,63,.14);
+
+    0 0 45px rgba(217,255,63,.18);
+
 }
 
 .glow-purple {
 
   box-shadow:
-    0 0 45px rgba(139,92,246,.15);
+
+    0 0 45px rgba(139,92,246,.18);
+
 }
 
 .glow-blue {
 
   box-shadow:
-    0 0 45px rgba(56,189,248,.15);
+
+    0 0 45px rgba(56,189,248,.18);
+
 }
 
-/* ==========================
-    Scrollbar
-========================== */
+/* ==========================================
+   Scrollbar
+========================================== */
 
 ::-webkit-scrollbar {
 
   width: 10px;
+
 }
 
 ::-webkit-scrollbar-track {
 
-  background: #05070d;
+  background: var(--panel);
+
 }
 
 ::-webkit-scrollbar-thumb {
 
-  background: #252a3d;
+  background: #666;
 
   border-radius: 999px;
+
+}
+
+.dark ::-webkit-scrollbar-thumb {
+
+  background: #252a3d;
+
 }
 
 ::-webkit-scrollbar-thumb:hover {
 
-  background: #d9ff3f;
+  background: var(--yellow);
+
 }
 
-/* ==========================
-    Selection
-========================== */
+/* ==========================================
+   Selection
+========================================== */
 
 ::selection {
 
   background: rgba(217,255,63,.35);
 
-  color: white;
+  color: inherit;
+
+}
+
+/* ==========================================
+   Print
+========================================== */
+
+@media print {
+
+  body {
+
+    background: white !important;
+
+    color: black !important;
+
+  }
+
 }

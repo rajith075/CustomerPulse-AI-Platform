@@ -1,9 +1,10 @@
 import {
+   IconLayoutDashboard,
   IconUpload,
   IconUsers,
+  IconReportAnalytics,
   IconChartBar,
   IconCoins,
-  IconReportAnalytics,
   IconBrain,
   IconHistory,
   IconSettings,
@@ -17,6 +18,11 @@ export interface NavigationItem {
 
 export const navigation: NavigationItem[] = [
   {
+  title: "Dashboard",
+  href: "/dashboard",
+  icon: IconLayoutDashboard,
+},
+  {
     title: "Upload Dataset",
     href: "/upload",
     icon: IconUpload,
@@ -27,6 +33,11 @@ export const navigation: NavigationItem[] = [
     icon: IconUsers,
   },
   {
+  title: "Reports",
+  href: "/reports",
+  icon: IconReportAnalytics,
+},
+  {
     title: "Analytics",
     href: "/analytics",
     icon: IconChartBar,
@@ -36,11 +47,7 @@ export const navigation: NavigationItem[] = [
     href: "/revenue",
     icon: IconCoins,
   },
-  {
-    title: "Reports",
-    href: "/reports",
-    icon: IconReportAnalytics,
-  },
+
   {
     title: "AI Consultant",
     href: "/ai",
