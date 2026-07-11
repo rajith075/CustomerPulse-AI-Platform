@@ -5,14 +5,29 @@ export async function uploadDataset(file: File) {
 
   formData.append("file", file);
 
-  const response = await fetch(`${API_URL}/upload`, {
-    method: "POST",
-    body: formData,
-  });
+  try {
+    const response = await fetch(`${API_URL}/upload`, {
+      method: "POST",
+      body: formData,
+    });
 
-  if (!response.ok) {
-    throw new Error("Failed to upload dataset.");
+    console.log("STATUS:", response.status);
+
+    const text = await response.text();
+
+    console.log("RAW RESPONSE:", text);
+
+    if (!response.ok) {
+      throw new Error(text);
+    }
+
+    return JSON.parse(text);
+
+  } catch (err) {
+
+    console.error("FETCH ERROR:", err);
+
+    throw err;
+
   }
-
-  return await response.json();
 }
